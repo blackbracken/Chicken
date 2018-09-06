@@ -1,6 +1,9 @@
 package black.bracken.chicken.core
 
 import black.bracken.chicken.exception.ExceedRateLimitException
+import black.bracken.chicken.exception.NotFoundException
+import black.bracken.chicken.exception.UnauthorizedException
+import black.bracken.chicken.exception.UnsupportedMediaTypeException
 import black.bracken.chicken.util.extension.decodedBody
 import okhttp3.Call
 import kotlin.concurrent.thread
@@ -15,8 +18,11 @@ class Submitted<R>(private val call: () -> Call, private val transform: (String)
 
         return when (response.code()) {
             200 -> transform(response.decodedBody!!)
-            429 -> throw ExceedRateLimitException()
-            else -> throw IllegalStateException("unexpected something happened") // TODO implement more
+            401 -> throw UnauthorizedException
+            404 -> throw NotFoundException
+            415 -> throw UnsupportedMediaTypeException
+            429 -> throw ExceedRateLimitException
+            else -> throw IllegalStateException("unexpected something happened")
         }
     }
 
