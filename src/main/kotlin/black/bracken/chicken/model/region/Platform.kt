@@ -1,4 +1,4 @@
-package black.bracken.chicken.models.region
+package black.bracken.chicken.model.region
 
 /**
  * @author BlackBracken

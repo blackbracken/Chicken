@@ -1,1 +1,1 @@
-# :construction: Chicken: A crispy PUBG-API wrapper for Kotlin
+# :construction: Chicken: A crispy PUBG API wrapper for Kotlin

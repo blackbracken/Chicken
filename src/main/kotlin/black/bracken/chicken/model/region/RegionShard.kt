@@ -1,8 +1,8 @@
-package black.bracken.chicken.models.region
+package black.bracken.chicken.model.region
 
-import black.bracken.chicken.models.region.Platform.PC
-import black.bracken.chicken.models.region.Platform.XBOX
-import black.bracken.chicken.models.region.Region.*
+import black.bracken.chicken.model.region.Platform.PC
+import black.bracken.chicken.model.region.Platform.XBOX
+import black.bracken.chicken.model.region.Region.*
 
 /**
  * @author BlackBracken
