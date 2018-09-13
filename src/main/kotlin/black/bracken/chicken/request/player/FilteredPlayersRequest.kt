@@ -19,7 +19,7 @@ class FilteredPlayersRequest(
 
     init {
         if (filteredIdList.isEmpty() && filteredNameList.isEmpty()) {
-            throw IllegalArgumentException("Either filteredIdList or filteredNameList must not be empty")
+            throw IllegalArgumentException("Either filteredIdList or filteredNameList must be filled")
         }
     }
 

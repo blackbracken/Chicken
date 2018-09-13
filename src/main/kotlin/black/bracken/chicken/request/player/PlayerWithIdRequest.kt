@@ -10,7 +10,7 @@ import okhttp3.HttpUrl
 /**
  * @author BlackBracken
  */
-class SinglePlayerRequest(
+class PlayerWithIdRequest(
         private val regionShard: RegionShard,
         private val accountId: String
 ) : Request<Player> {
