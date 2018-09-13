@@ -30,6 +30,12 @@ class Submitted<R : Any>(private val call: () -> Call, private val squeeze: (Jso
         return squeeze(parser.parse(StringBuilder(response.decodedBody)) as JsonObject)
     }
 
+    fun completeOrNull(): R? = try {
+        complete()
+    } catch (throwable: Throwable) {
+        null
+    }
+
     fun queue(success: (R) -> Unit = {}, failure: ((Throwable) -> Unit) = { throw it }): Unit = thread {
         try {
             success(complete())
