@@ -25,7 +25,7 @@ fun main(args: Array<String>) {
 ```
 
 ## 目次
-* [Chicken](#Chicken: A crispy PUBG API wrapper for Kotlin :poultry_leg:)
+* [Index](#目次)
   * [ChickenClient](#ChickenClient)
   * [Submitted](#Submitted)
 
