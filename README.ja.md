@@ -2,7 +2,7 @@
 
 > i18nized readme is [here](https://github.com/blackbracken/Chicken/blob/master/README.md).
 
-Chickenは、簡潔さと柔軟性を併せ持ったKotlinのためのPUBG APIラッパーです。
+Chickenは、記述の簡潔さと柔軟性を併せ持ったKotlinのためのPUBG APIラッパーです。
 
 ```kotlin
 fun main(args: Array<String>) {
@@ -25,10 +25,24 @@ fun main(args: Array<String>) {
 ```
 
 ## 目次
-* [Index](#目次)
-  * [ChickenClient](#ChickenClient)
-  * [Submitted](#Submitted)
+* [目次](#目次)
+  * [Client](#Client)
+  * [Request](#Request)
+    * [FilteredPlayersRequest](#FilteredPlayersRequest)
 
-### ChickenClient
+### Client
+`ChickenClient(apiKey: String)`によってこのAPIで用いるクライアントを生成できます。
+`apiKey`は[公式サイト](https://developer.pubg.com/)から取得してください。
 
-### Submitted
+### Request
+リクエストは`ChickenClient#request(Request<R>)`によって発行されます。
+与えたリクエストによって得られると期待される型が`R`となります。
+
+#### FilteredPlayersRequest
+公式APIの[get_players](https://documentation.pubg.com/en/players-endpoint.html#/Players/get_players)に対応したリクエストです。
+
+`FilteredPlayerRequest(RegionShard, filteredIdList: List<String>)`か`FilteredPlayerRequest(Region, filteredNameList: List<String>)`で生成します。
+filteredIdListかfilteredNameListの**どちらかは空はでない**必要があります。
+
+#### 
+
