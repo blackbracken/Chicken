@@ -7,11 +7,11 @@ import com.beust.klaxon.JsonObject
 import okhttp3.HttpUrl
 
 class PlayerWithNameRequest(
-        private val regionShard: RegionShard,
-        private val name: String
+        regionShard: RegionShard,
+        name: String
 ) : Request<Player> {
 
-    private val filteredRequest = FilteredPlayersRequest(regionShard, filteredNameList = listOf(name))
+    private val filteredRequest = FilteredPlayersRequest(regionShard, FilteredPlayersRequest.Filter(nameList = listOf(name)))
 
     override fun buildHttpUrl(builder: HttpUrl.Builder): HttpUrl = filteredRequest.buildHttpUrl(builder)
 

@@ -13,14 +13,18 @@ import okhttp3.HttpUrl
  */
 class FilteredPlayersRequest(
         private val regionShard: RegionShard,
-        private val filteredIdList: List<String> = listOf(),
-        private val filteredNameList: List<String> = listOf()
+        private val filter: Filter
 ) : Request<List<Player>> {
 
-    init {
-        if (filteredIdList.isEmpty() && filteredNameList.isEmpty()) {
-            throw IllegalArgumentException("Either filteredIdList or filteredNameList must be filled")
+    data class Filter(
+            val idList: List<String> = listOf(),
+            val nameList: List<String> = listOf()
+    ) {
+
+        init {
+            if (idList.isEmpty() && nameList.isEmpty()) throw IllegalArgumentException("Either idList or nameList must not be empty")
         }
+
     }
 
     override fun buildHttpUrl(builder: HttpUrl.Builder): HttpUrl = builder
@@ -28,8 +32,8 @@ class FilteredPlayersRequest(
             .addPathSegment(regionShard.toString())
             .addPathSegment("players")
             .apply {
-                if (filteredIdList.isNotEmpty()) addEncodedQueryParameter("filter[accountIds]", filteredIdList.joinToString(separator = ","))
-                if (filteredNameList.isNotEmpty()) addEncodedQueryParameter("filter[playerNames]", filteredNameList.joinToString(separator = ","))
+                if (filter.idList.isNotEmpty()) addEncodedQueryParameter("filter[accountIds]", filter.idList.joinToString(separator = ","))
+                if (filter.nameList.isNotEmpty()) addEncodedQueryParameter("filter[playerNames]", filter.nameList.joinToString(separator = ","))
             }
             .build()
 
