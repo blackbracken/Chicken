@@ -7,6 +7,8 @@ import okhttp3.Request
 private typealias ChickenRequest<V> = black.bracken.chicken.request.Request<V>
 
 /**
+ * A client to get data from PUBG-API.
+ *
  * @author BlackBracken
  */
 class ChickenClient(private val apiKey: String) {
@@ -19,14 +21,17 @@ class ChickenClient(private val apiKey: String) {
 
     private val client = OkHttpClient()
 
-    fun <R : Any, Q : ChickenRequest<R>> request(chickenRequest: Q): Submitted<R> {
+    /**
+     * Returns [Prepared] is ready to request.
+     */
+    fun <R : Any, Q : ChickenRequest<R>> prepare(chickenRequest: Q): Prepared<R> {
         val request = Request.Builder()
                 .url(chickenRequest.buildHttpUrl(HttpUrl.Builder().scheme(SCHEME).host(HOST)))
                 .addHeader("Authorization", "Bearer $apiKey")
                 .addHeader("Accept", "application/vnd.api+json")
                 .addHeader("Accept-Encoding", "gzip")
                 .build()
-        return Submitted({ client.newCall(request) }, { jsonObject -> chickenRequest.squeezeJson(jsonObject) })
+        return Prepared({ client.newCall(request) }, { jsonObject -> chickenRequest.squeezeJson(jsonObject) })
     }
 
 }

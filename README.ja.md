@@ -18,12 +18,19 @@ fun main(args: Array<String>) {
         println(queuedPlayer.name) // レスポンスが返ってきてからこのスコープは実行されます、コードの進行はブロッキングされません
     }
     
-    // 例外が発生したときにnullを返すこともできます
-    val nullablePlayer: Player? = nameRequest.completeOrNull()
-    println(nullablePlayer?.name ?: "UNKNOWN_PLAYER")
+    // 例外によって処理を切り替えることもできます
+    nameRequest.queue(
+        success = { queuedPlayer ->
+            println(queuedPlayer.name)
+        },
+        failure = { throwable ->
+            println("happened $throwable: ${throwable.message}")
+        }
+    )
 }
 ```
 
+<!--
 ## 目次
 * [目次](#目次)
   * [Client](#Client)
@@ -44,5 +51,5 @@ fun main(args: Array<String>) {
 `FilteredPlayerRequest(RegionShard, filteredIdList: List<String>)`か`FilteredPlayerRequest(Region, filteredNameList: List<String>)`で生成します。
 filteredIdListかfilteredNameListの**どちらかは空はでない**必要があります。
 
-#### 
-
+####
+-->

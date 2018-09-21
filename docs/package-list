@@ -1,0 +1,12 @@
+$dokka.format:html
+$dokka.linkExtension:html
+
+black.bracken.chicken
+black.bracken.chicken.exception
+black.bracken.chicken.exception.request
+black.bracken.chicken.key
+black.bracken.chicken.key.player
+black.bracken.chicken.model
+black.bracken.chicken.model.region
+black.bracken.chicken.request
+black.bracken.chicken.request.player

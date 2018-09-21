@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Prepared.queue - docs</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">docs</a>&nbsp;/&nbsp;<a href="../index.html">black.bracken.chicken</a>&nbsp;/&nbsp;<a href="index.html">Prepared</a>&nbsp;/&nbsp;<a href="./queue.html">queue</a><br/>
+<br/>
+<h1>queue</h1>
+<a name="black.bracken.chicken.Prepared$queue(kotlin.Function1((black.bracken.chicken.Prepared.R, kotlin.Unit)), kotlin.Function1((kotlin.Throwable, kotlin.Unit)))"></a>
+<code><span class="keyword">fun </span><span class="identifier">queue</span><span class="symbol">(</span><span class="identifier" id="black.bracken.chicken.Prepared$queue(kotlin.Function1((black.bracken.chicken.Prepared.R, kotlin.Unit)), kotlin.Function1((kotlin.Throwable, kotlin.Unit)))/success">success</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="index.html#R"><span class="identifier">R</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">, </span><span class="identifier" id="black.bracken.chicken.Prepared$queue(kotlin.Function1((black.bracken.chicken.Prepared.R, kotlin.Unit)), kotlin.Function1((kotlin.Throwable, kotlin.Unit)))/failure">failure</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Submits <a href="call.html">call</a> <strong>in another thread (non-blocking)</strong> then executes <a href="queue.html#black.bracken.chicken.Prepared$queue(kotlin.Function1((black.bracken.chicken.Prepared.R, kotlin.Unit)), kotlin.Function1((kotlin.Throwable, kotlin.Unit)))/success">success</a> with transformed <a href="index.html#R">R</a> if success otherwise <a href="queue.html#black.bracken.chicken.Prepared$queue(kotlin.Function1((black.bracken.chicken.Prepared.R, kotlin.Unit)), kotlin.Function1((kotlin.Throwable, kotlin.Unit)))/failure">failure</a> with happened <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html">Throwable</a>;
+done in asynchronous.</p>
+<p><strong>See Also</strong><br/>
+<p><a href="complete.html">complete</a></p>
+</p>
+<a name="black.bracken.chicken.Prepared$queue(kotlin.Function1((black.bracken.chicken.Prepared.R, kotlin.Unit)))"></a>
+<code><span class="keyword">fun </span><span class="identifier">queue</span><span class="symbol">(</span><span class="identifier" id="black.bracken.chicken.Prepared$queue(kotlin.Function1((black.bracken.chicken.Prepared.R, kotlin.Unit)))/success">success</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="index.html#R"><span class="identifier">R</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Submits <a href="call.html">call</a> <strong>in another thread (non-blocking)</strong> then executes <a href="queue.html#black.bracken.chicken.Prepared$queue(kotlin.Function1((black.bracken.chicken.Prepared.R, kotlin.Unit)))/success">success</a> with transformed <a href="index.html#R">R</a> if success otherwise throws <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html">Throwable</a>;
+done in asynchronous.</p>
+<p><strong>See Also</strong><br/>
+<p><a href="complete.html">complete</a></p>
+</p>
+</BODY>
+</HTML>
