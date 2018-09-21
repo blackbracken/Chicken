@@ -4,6 +4,8 @@
 
 Chickenは、記述の簡潔さと柔軟性を併せ持ったKotlinのためのPUBG APIラッパーです。
 
+ドキュメントは[kdoc](https://bracken.black/Chicken/)を参照してください。
+
 ```kotlin
 fun main(args: Array<String>) {
     val client = ChickenClient("your-api-key")
