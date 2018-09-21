@@ -1,6 +1,7 @@
 $dokka.format:html
 $dokka.linkExtension:html
-
+$dokka.location:black.bracken.chicken.util.extension$decodedBody#okhttp3.Responseblack.bracken.chicken.util.extension/okhttp3.-response/decoded-body.html
+$dokka.location:black.bracken.chicken.util.extension$unzip(okhttp3.Response)black.bracken.chicken.util.extension/okhttp3.-response/unzip.html
 black.bracken.chicken
 black.bracken.chicken.exception
 black.bracken.chicken.exception.request
@@ -10,3 +11,4 @@ black.bracken.chicken.model
 black.bracken.chicken.model.region
 black.bracken.chicken.request
 black.bracken.chicken.request.player
+black.bracken.chicken.util.extension

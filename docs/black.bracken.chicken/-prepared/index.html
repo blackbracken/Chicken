@@ -15,6 +15,46 @@
 <code>R</code> - A returned type by requesting</p>
 <p><strong>Author</strong><br/>
 BlackBracken</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="keyword">internal</span> <span class="identifier">Prepared</span><span class="symbol">(</span><span class="identifier" id="black.bracken.chicken.Prepared$<init>(kotlin.Function0((okhttp3.Call)), kotlin.Function1((com.beust.klaxon.JsonObject, black.bracken.chicken.Prepared.R)))/call">call</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<span class="identifier">Call</span><span class="symbol">, </span><span class="identifier" id="black.bracken.chicken.Prepared$<init>(kotlin.Function0((okhttp3.Call)), kotlin.Function1((com.beust.klaxon.JsonObject, black.bracken.chicken.Prepared.R)))/transform">transform</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="identifier">JsonObject</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="index.html#R"><span class="identifier">R</span></a><span class="symbol">)</span></code>
+<p>A wrapped <a href="../../black.bracken.chicken.request/-request/index.html">Request</a> which can be submitted to PUBG-API immediately in some ways.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="call.html">call</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">call</span><span class="symbol">: </span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<span class="identifier">Call</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="parser.html">parser</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">parser</span><span class="symbol">: </span><span class="identifier">Parser</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="transform.html">transform</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">transform</span><span class="symbol">: </span><span class="symbol">(</span><span class="identifier">JsonObject</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="index.html#R"><span class="identifier">R</span></a></code></td>
+</tr>
+</tbody>
+</table>
 <h3>Functions</h3>
 <table>
 <tbody>
@@ -24,23 +64,21 @@ BlackBracken</p>
 </td>
 <td>
 <code><span class="keyword">fun </span><span class="identifier">complete</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="index.html#R"><span class="identifier">R</span></a></code>
-<p>Submits <a href="#">call</a> <strong>while blocking</strong> then returns the received value is transformed into <a href="index.html#R">R</a>; done in synchronous.</p>
+<p>Submits <a href="call.html">call</a> <strong>while blocking</strong> then returns the received value is transformed into <a href="index.html#R">R</a>; done in synchronous.</p>
 </td>
-</tr>
-<tr>
-<td>
-<p><a href="complete-or-null.html">completeOrNull</a></p>
-</td>
-<td>
-<code><span class="keyword">fun </span><span class="identifier">completeOrNull</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="index.html#R"><span class="identifier">R</span></a><span class="symbol">?</span></code></td>
 </tr>
 <tr>
 <td>
 <p><a href="queue.html">queue</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><span class="identifier">queue</span><span class="symbol">(</span><span class="identifier" id="black.bracken.chicken.Prepared$queue(kotlin.Function1((black.bracken.chicken.Prepared.R, kotlin.Unit)), kotlin.Function1((kotlin.Throwable, kotlin.Unit)))/success">success</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="index.html#R"><span class="identifier">R</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a>&nbsp;<span class="symbol">=</span>&nbsp;{}<span class="symbol">, </span><span class="identifier" id="black.bracken.chicken.Prepared$queue(kotlin.Function1((black.bracken.chicken.Prepared.R, kotlin.Unit)), kotlin.Function1((kotlin.Throwable, kotlin.Unit)))/failure">failure</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a>&nbsp;<span class="symbol">=</span>&nbsp;{ throw it }<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
-<code><span class="keyword">fun </span><span class="identifier">queue</span><span class="symbol">(</span><span class="identifier" id="black.bracken.chicken.Prepared$queue(kotlin.Function1((black.bracken.chicken.Prepared.R, kotlin.Unit)))/action">action</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="index.html#R"><span class="identifier">R</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+<code><span class="keyword">fun </span><span class="identifier">queue</span><span class="symbol">(</span><span class="identifier" id="black.bracken.chicken.Prepared$queue(kotlin.Function1((black.bracken.chicken.Prepared.R, kotlin.Unit)), kotlin.Function1((kotlin.Throwable, kotlin.Unit)))/success">success</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="index.html#R"><span class="identifier">R</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">, </span><span class="identifier" id="black.bracken.chicken.Prepared$queue(kotlin.Function1((black.bracken.chicken.Prepared.R, kotlin.Unit)), kotlin.Function1((kotlin.Throwable, kotlin.Unit)))/failure">failure</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Submits <a href="call.html">call</a> <strong>in another thread (non-blocking)</strong> then executes <a href="queue.html#black.bracken.chicken.Prepared$queue(kotlin.Function1((black.bracken.chicken.Prepared.R, kotlin.Unit)), kotlin.Function1((kotlin.Throwable, kotlin.Unit)))/success">success</a> with transformed <a href="index.html#R">R</a> if success otherwise <a href="queue.html#black.bracken.chicken.Prepared$queue(kotlin.Function1((black.bracken.chicken.Prepared.R, kotlin.Unit)), kotlin.Function1((kotlin.Throwable, kotlin.Unit)))/failure">failure</a> with happened <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html">Throwable</a>;
+done in asynchronous.</p>
+<code><span class="keyword">fun </span><span class="identifier">queue</span><span class="symbol">(</span><span class="identifier" id="black.bracken.chicken.Prepared$queue(kotlin.Function1((black.bracken.chicken.Prepared.R, kotlin.Unit)))/success">success</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="index.html#R"><span class="identifier">R</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Submits <a href="call.html">call</a> <strong>in another thread (non-blocking)</strong> then executes <a href="queue.html#black.bracken.chicken.Prepared$queue(kotlin.Function1((black.bracken.chicken.Prepared.R, kotlin.Unit)))/success">success</a> with transformed <a href="index.html#R">R</a> if success otherwise throws <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html">Throwable</a>;
+done in asynchronous.</p>
+</td>
 </tr>
 </tbody>
 </table>
