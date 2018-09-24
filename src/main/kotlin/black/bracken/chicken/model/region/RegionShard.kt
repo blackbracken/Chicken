@@ -5,6 +5,8 @@ import black.bracken.chicken.model.region.Platform.XBOX
 import black.bracken.chicken.model.region.Region.*
 
 /**
+ * Enumerates represents [Region] and [Platform] used when requesting.
+ *
  * @author BlackBracken
  */
 enum class RegionShard(val platform: Platform, val region: Region) {

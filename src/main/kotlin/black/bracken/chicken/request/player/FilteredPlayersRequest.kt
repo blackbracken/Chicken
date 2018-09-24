@@ -38,6 +38,6 @@ class FilteredPlayersRequest(
             .build()
 
     @Suppress("UNCHECKED_CAST")
-    override fun squeezeJson(jsonObject: JsonObject): List<Player> = (jsonObject["data"] as JsonArray<JsonObject>).map { childJson -> Player(childJson) }
+    override fun transformJson(jsonObject: JsonObject): List<Player> = (jsonObject["data"] as JsonArray<JsonObject>).map { childJson -> Player(childJson) }
 
 }

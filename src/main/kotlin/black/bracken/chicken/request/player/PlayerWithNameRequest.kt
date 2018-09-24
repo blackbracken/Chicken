@@ -15,6 +15,6 @@ class PlayerWithNameRequest(
 
     override fun buildHttpUrl(builder: HttpUrl.Builder): HttpUrl = filteredRequest.buildHttpUrl(builder)
 
-    override fun squeezeJson(jsonObject: JsonObject): Player = filteredRequest.squeezeJson(jsonObject).first()
+    override fun transformJson(jsonObject: JsonObject): Player = filteredRequest.transformJson(jsonObject).first()
 
 }

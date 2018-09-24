@@ -10,8 +10,11 @@ import com.beust.klaxon.JsonArray
 import com.beust.klaxon.JsonObject
 
 /**
+ * See official document at [https://documentation.pubg.com/en/players-endpoint.html].
+ *
  * @author BlackBracken
  */
+
 object PlayerKeys {
 
     val ID = ModelKey { jsonObject -> jsonObject["id"] as String }

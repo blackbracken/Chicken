@@ -22,6 +22,6 @@ class PlayerWithIdRequest(
             .addPathSegment(accountId)
             .build()
 
-    override fun squeezeJson(jsonObject: JsonObject): Player = Player(jsonObject["data"] as JsonObject)
+    override fun transformJson(jsonObject: JsonObject): Player = Player(jsonObject["data"] as JsonObject)
 
 }

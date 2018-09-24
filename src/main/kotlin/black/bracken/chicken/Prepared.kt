@@ -10,7 +10,7 @@ import java.net.UnknownHostException
 import kotlin.concurrent.thread
 
 /**
- * A wrapped [Request] which can be submitted to PUBG-API immediately in some ways.
+ * A wrapped [Request] which can be submitted to PUBG API immediately in some ways.
  *
  * @author BlackBracken
  * @param R A returned type by requesting

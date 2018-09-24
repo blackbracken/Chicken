@@ -1,6 +1,8 @@
 package black.bracken.chicken.model.region
 
 /**
+ * A region.
+ *
  * @author BlackBracken
  */
 enum class Region(val shortened: String) {
