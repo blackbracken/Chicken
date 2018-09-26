@@ -1,9 +1,10 @@
 package black.bracken.chicken.request.player
 
 import black.bracken.chicken.ChickenClient
-import black.bracken.chicken.model.Player
-import black.bracken.chicken.model.region.RegionShard
 import black.bracken.chicken.request.Request
+import black.bracken.chicken.response.ExtractableJsonModel
+import black.bracken.chicken.response.models.Player
+import black.bracken.chicken.response.models.region.RegionShard
 import com.beust.klaxon.JsonArray
 import com.beust.klaxon.JsonObject
 import okhttp3.HttpUrl
@@ -14,7 +15,7 @@ import okhttp3.HttpUrl
 class FilteredPlayersRequest(
         private val regionShard: RegionShard,
         private val filter: Filter
-) : Request<List<Player>> {
+) : Request<List<ExtractableJsonModel<Player>>> {
 
     data class Filter(
             val idList: List<String> = listOf(),
@@ -27,7 +28,7 @@ class FilteredPlayersRequest(
 
     }
 
-    override fun buildHttpUrl(builder: HttpUrl.Builder): HttpUrl = builder
+    override fun buildRequestUrl(builder: HttpUrl.Builder) = builder
             .addPathSegment(ChickenClient.SHARDS)
             .addPathSegment(regionShard.toString())
             .addPathSegment("players")
@@ -35,9 +36,9 @@ class FilteredPlayersRequest(
                 if (filter.idList.isNotEmpty()) addEncodedQueryParameter("filter[accountIds]", filter.idList.joinToString(separator = ","))
                 if (filter.nameList.isNotEmpty()) addEncodedQueryParameter("filter[playerNames]", filter.nameList.joinToString(separator = ","))
             }
-            .build()
+            .build()!!
 
     @Suppress("UNCHECKED_CAST")
-    override fun transformJson(jsonObject: JsonObject): List<Player> = (jsonObject["data"] as JsonArray<JsonObject>).map { childJson -> Player(childJson) }
+    override fun transformJson(jsonObject: JsonObject) = (jsonObject["data"] as JsonArray<JsonObject>).map { childJson -> ExtractableJsonModel(Player(childJson)) }
 
 }

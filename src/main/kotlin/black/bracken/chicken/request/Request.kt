@@ -11,7 +11,7 @@ import okhttp3.HttpUrl
  */
 interface Request<V : Any> {
 
-    fun buildHttpUrl(builder: HttpUrl.Builder): HttpUrl
+    fun buildRequestUrl(builder: HttpUrl.Builder): HttpUrl
 
     fun transformJson(jsonObject: JsonObject): V
 

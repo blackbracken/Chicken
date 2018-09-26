@@ -1,4 +1,4 @@
-package black.bracken.chicken.util.extension
+package black.bracken.chicken.extension
 
 import okhttp3.Response
 import okio.GzipSource

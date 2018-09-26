@@ -1,4 +1,4 @@
-package black.bracken.chicken.model.region
+package black.bracken.chicken.response.models.region
 
 /**
  * A platform provides PUBG.

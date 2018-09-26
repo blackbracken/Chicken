@@ -2,7 +2,7 @@ package black.bracken.chicken
 
 import black.bracken.chicken.exception.request.*
 import black.bracken.chicken.request.Request
-import black.bracken.chicken.util.extension.decodedBody
+import black.bracken.chicken.extension.decodedBody
 import com.beust.klaxon.JsonObject
 import com.beust.klaxon.Parser
 import okhttp3.Call
