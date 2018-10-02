@@ -5,27 +5,23 @@ import black.bracken.chicken.response.keys.player.PlayerAttributesKeys
 import black.bracken.chicken.response.keys.player.PlayerKeys
 import black.bracken.chicken.response.keys.player.PlayerRelationshipsKeys
 import black.bracken.chicken.response.models.Player
-import black.bracken.chicken.response.models.PlayerAttributes
-import black.bracken.chicken.response.models.PlayerMatch
-import black.bracken.chicken.response.models.PlayerRelationships
-import black.bracken.chicken.response.models.region.RegionShard
 
 /**
  * @author BlackBracken
  */
 
-val ExtractableJsonModel<Player>.id: String get() = this[PlayerKeys.ID]
+val ExtractableJsonModel<Player>.id get() = this[PlayerKeys.ID]
 
-val ExtractableJsonModel<Player>.attributes: ExtractableJsonModel<PlayerAttributes> get() = this[PlayerKeys.ATTRIBUTES]
+val ExtractableJsonModel<Player>.attributes get() = this[PlayerKeys.ATTRIBUTES]
 
-val ExtractableJsonModel<Player>.relationships: ExtractableJsonModel<PlayerRelationships> get() = this[PlayerKeys.RELATIONSHIPS]
+val ExtractableJsonModel<Player>.relationships get() = this[PlayerKeys.RELATIONSHIPS]
 
-val ExtractableJsonModel<Player>.name: String get() = attributes[PlayerAttributesKeys.NAME]
+val ExtractableJsonModel<Player>.name get() = attributes[PlayerAttributesKeys.NAME]
 
-val ExtractableJsonModel<Player>.shard: RegionShard get() = attributes[PlayerAttributesKeys.SHARD_ID]
+val ExtractableJsonModel<Player>.shard get() = attributes[PlayerAttributesKeys.SHARD_ID]
 
-val ExtractableJsonModel<Player>.patchVersion: String get() = attributes[PlayerAttributesKeys.PATCH_VERSION]
+val ExtractableJsonModel<Player>.patchVersion get() = attributes[PlayerAttributesKeys.PATCH_VERSION]
 
-val ExtractableJsonModel<Player>.titleId: String get() = attributes[PlayerAttributesKeys.TITLE_ID]
+val ExtractableJsonModel<Player>.titleId get() = attributes[PlayerAttributesKeys.TITLE_ID]
 
-val ExtractableJsonModel<Player>.matches: List<ExtractableJsonModel<PlayerMatch>> get() = relationships[PlayerRelationshipsKeys.MATCHES]
+val ExtractableJsonModel<Player>.matches get() = relationships[PlayerRelationshipsKeys.MATCHES]

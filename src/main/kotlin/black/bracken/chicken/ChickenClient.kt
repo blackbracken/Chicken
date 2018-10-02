@@ -26,7 +26,7 @@ class ChickenClient(private val apiKey: String) {
      */
     fun <R : Any, Q : ChickenRequest<R>> prepare(chickenRequest: Q): Prepared<R> {
         val request = Request.Builder()
-                .url(chickenRequest.buildHttpUrl(HttpUrl.Builder().scheme(SCHEME).host(HOST)))
+                .url(chickenRequest.buildRequestUrl(HttpUrl.Builder().scheme(SCHEME).host(HOST)))
                 .addHeader("Authorization", "Bearer $apiKey")
                 .addHeader("Accept", "application/vnd.api+json")
                 .addHeader("Accept-Encoding", "gzip")

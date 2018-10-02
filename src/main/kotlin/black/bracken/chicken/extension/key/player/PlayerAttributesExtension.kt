@@ -3,7 +3,7 @@ package black.bracken.chicken.extension.key.player
 import black.bracken.chicken.response.ExtractableJsonModel
 import black.bracken.chicken.response.keys.player.PlayerAttributesKeys
 import black.bracken.chicken.response.models.PlayerAttributes
-import black.bracken.chicken.response.models.region.RegionShard
+import black.bracken.chicken.response.models.enumerations.region.RegionShard
 
 /**
  * @author BlackBracken

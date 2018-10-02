@@ -2,7 +2,7 @@ package black.bracken.chicken.response.keys.player
 
 import black.bracken.chicken.response.ModelKey
 import black.bracken.chicken.response.models.PlayerAttributes
-import black.bracken.chicken.response.models.region.RegionShard
+import black.bracken.chicken.response.models.enumerations.region.RegionShard
 
 /**
  * See official document at [https://documentation.pubg.com/en/players-endpoint.html].
