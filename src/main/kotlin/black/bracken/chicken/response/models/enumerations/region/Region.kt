@@ -1,4 +1,4 @@
-package black.bracken.chicken.response.models.region
+package black.bracken.chicken.response.models.enumerations.region
 
 /**
  * A region.

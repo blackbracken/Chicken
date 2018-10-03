@@ -1,8 +1,8 @@
-package black.bracken.chicken.response.models.region
+package black.bracken.chicken.response.models.enumerations.region
 
-import black.bracken.chicken.response.models.region.Platform.PC
-import black.bracken.chicken.response.models.region.Platform.XBOX
-import black.bracken.chicken.response.models.region.Region.*
+import black.bracken.chicken.response.models.enumerations.region.Platform.PC
+import black.bracken.chicken.response.models.enumerations.region.Platform.XBOX
+import black.bracken.chicken.response.models.enumerations.region.Region.*
 
 /**
  * Enumerates represents [Region] and [Platform] used when requesting.
