@@ -1,4 +1,4 @@
-package black.bracken.chicken.response.keys.match
+package black.bracken.chicken.response.keys.match.participant
 
 import black.bracken.chicken.response.ModelKey
 import black.bracken.chicken.response.models.MatchParticipantAttributesStats

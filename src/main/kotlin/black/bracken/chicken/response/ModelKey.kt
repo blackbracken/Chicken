@@ -5,4 +5,4 @@ package black.bracken.chicken.response
  *
  * @author BlackBracken
  */
-class ModelKey<M : JsonModel, out R : Any>(val extract: (M) -> R)
+open class ModelKey<M : JsonModel, out R : Any>(val extract: (M) -> R)
