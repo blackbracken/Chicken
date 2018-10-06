@@ -1,20 +1,19 @@
 package black.bracken.chicken.response.keys.match.asset
 
-import black.bracken.chicken.response.ExtractableJsonModel
-import black.bracken.chicken.response.ModelKey
+import black.bracken.chicken.response.DownModelKey
+import black.bracken.chicken.response.SimpleModelKey
 import black.bracken.chicken.response.models.MatchAsset
 import black.bracken.chicken.response.models.MatchAssetAttributes
-import com.beust.klaxon.JsonObject
+
+private typealias Subject = MatchAsset
 
 /**
  * @author BlackBracken
  */
 object MatchAssetKeys {
 
-    val ID = ModelKey<MatchAsset, String> { model -> model.jsonObject["id"] as String }
+    val ID = SimpleModelKey<MatchAsset, String>("id")
 
-    val ATTRIBUTES = ModelKey<MatchAsset, ExtractableJsonModel<MatchAssetAttributes>> { model ->
-        ExtractableJsonModel(MatchAssetAttributes(model.jsonObject["attributes"] as JsonObject))
-    }
+    val ATTRIBUTES = DownModelKey<MatchAsset, MatchAssetAttributes>("attributes") { jsonObject -> MatchAssetAttributes(jsonObject) }
 
 }

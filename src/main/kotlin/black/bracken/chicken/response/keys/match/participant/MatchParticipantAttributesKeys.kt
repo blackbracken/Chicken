@@ -1,25 +1,22 @@
 package black.bracken.chicken.response.keys.match.participant
 
-import black.bracken.chicken.response.ExtractableJsonModel
-import black.bracken.chicken.response.ModelKey
+import black.bracken.chicken.response.DownModelKey
+import black.bracken.chicken.response.SimpleModelKey
 import black.bracken.chicken.response.models.MatchParticipantAttributes
 import black.bracken.chicken.response.models.MatchParticipantAttributesStats
 import black.bracken.chicken.response.models.enumerations.region.RegionShard
-import com.beust.klaxon.JsonObject
 
 /**
  * @author BlackBracken
  */
 object MatchParticipantAttributesKeys {
 
-    val ACTOR = ModelKey<MatchParticipantAttributes, String> { model -> model.jsonObject["actor"] as String }
+    val ACTOR = SimpleModelKey<MatchParticipantAttributes, String>("actor")
 
-    val SHARD_ID = ModelKey<MatchParticipantAttributes, RegionShard> { model ->
-        RegionShard.valueOf((model.jsonObject["shardId"] as String).toUpperCase())
-    }
+    val SHARD_ID = SimpleModelKey<MatchParticipantAttributes, RegionShard>("shardId") { any -> RegionShard.valueOf(any as String) }
 
-    val STATS = ModelKey<MatchParticipantAttributes, ExtractableJsonModel<MatchParticipantAttributesStats>> { model ->
-        ExtractableJsonModel(MatchParticipantAttributesStats(model.jsonObject["stats"] as JsonObject))
+    val STATS_NEW = DownModelKey<MatchParticipantAttributes, MatchParticipantAttributesStats>("stats") { jsonObject ->
+        MatchParticipantAttributesStats(jsonObject)
     }
 
 }

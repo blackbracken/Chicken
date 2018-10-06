@@ -1,74 +1,74 @@
 package black.bracken.chicken.response.keys.match.participant
 
-import black.bracken.chicken.response.ModelKey
+import black.bracken.chicken.response.SimpleModelKey
 import black.bracken.chicken.response.models.MatchParticipantAttributesStats
 import black.bracken.chicken.response.models.enumerations.DeathType
 
+private typealias Subject = MatchParticipantAttributesStats
+
 /**
  * @author BlackBracken
- *
- * TODO: remove boiler plates
  */
 object MatchParticipantAttributesStatsKeys {
 
-    val DBNOS = ModelKey<MatchParticipantAttributesStats, Int> { model -> model.jsonObject["DBNOs"] as Int }
+    val DBNOS = SimpleModelKey<Subject, Int>("DBNOs")
 
-    val ASSISTS = ModelKey<MatchParticipantAttributesStats, Int> { model -> model.jsonObject["assists"] as Int }
+    val ASSISTS = SimpleModelKey<Subject, Int>("assists")
 
-    val BOOSTS = ModelKey<MatchParticipantAttributesStats, Int> { model -> model.jsonObject["boosts"] as Int }
+    val BOOSTS = SimpleModelKey<Subject, Int>("boosts")
 
-    val DAMAGE_DEALT = ModelKey<MatchParticipantAttributesStats, Double> { model -> model.jsonObject["damageDealt"] as Double }
+    val DAMAGE_DEALT = SimpleModelKey<Subject, Double>("damageDealt")
 
-    val DEATH_TYPE = ModelKey<MatchParticipantAttributesStats, DeathType> { model -> DeathType.valueOf(model.jsonObject["deathType"] as String) }
+    val DEATH_TYPE = SimpleModelKey<Subject, DeathType>("deathType") { jsonObject -> DeathType.valueOf(jsonObject as String) }
 
-    val HEADSHOT_KILLS = ModelKey<MatchParticipantAttributesStats, Int> { model -> model.jsonObject["headshotKills"] as Int }
+    val HEADSHOT_KILLS = SimpleModelKey<Subject, Int>("headshotKills")
 
-    val HEALS = ModelKey<MatchParticipantAttributesStats, Int> { model -> model.jsonObject["heals"] as Int }
+    val HEALS = SimpleModelKey<Subject, Int>("heals")
 
-    val KILL_PLACE = ModelKey<MatchParticipantAttributesStats, Int> { model -> model.jsonObject["killPlace"] as Int }
+    val KILL_PLACE = SimpleModelKey<Subject, Int>("killPlace")
 
-    val KILL_POINTS = ModelKey<MatchParticipantAttributesStats, Int> { model -> model.jsonObject["killPoints"] as Int }
+    val KILL_POINTS = SimpleModelKey<Subject, Int>("killPoints")
 
-    val KILL_POINTS_DELTA = ModelKey<MatchParticipantAttributesStats, Double> { model -> model.jsonObject["killPointsDelta"] as Double }
+    val KILL_POINTS_DELTA = SimpleModelKey<Subject, Double>("killPointsDelta")
 
-    val KILL_STREAKS = ModelKey<MatchParticipantAttributesStats, Double> { model -> model.jsonObject["killStreaks"] as Double }
+    val KILL_STREAKS = SimpleModelKey<Subject, Double>("killStreaks")
 
-    val KILLS = ModelKey<MatchParticipantAttributesStats, Int> { model -> model.jsonObject["kills"] as Int }
+    val KILLS = SimpleModelKey<Subject, Int>("kills")
 
-    val LAST_KILL_POINTS = ModelKey<MatchParticipantAttributesStats, Int> { model -> model.jsonObject["lastKillPoints"] as Int }
+    val LAST_KILL_POINTS = SimpleModelKey<Subject, Int>("lastKillPoints")
 
-    val LAST_WIN_POINTS = ModelKey<MatchParticipantAttributesStats, Int> { model -> model.jsonObject["lastWinPoints"] as Int }
+    val LAST_WIN_POINTS = SimpleModelKey<Subject, Int>("lastWinPoints")
 
-    val LONGEST_KILL = ModelKey<MatchParticipantAttributesStats, Double> { model -> model.jsonObject["longestKill"] as Double }
+    val LONGEST_KILL = SimpleModelKey<Subject, Double>("longestKill")
 
-    val MOST_DAMAGE = ModelKey<MatchParticipantAttributesStats, Double> { model -> model.jsonObject["mostDamage"] as Double }
+    val MOST_DAMAGE = SimpleModelKey<Subject, Double>("mostDamage")
 
-    val NAME = ModelKey<MatchParticipantAttributesStats, String> { model -> model.jsonObject["name"] as String }
+    val NAME = SimpleModelKey<Subject, String>("name")
 
-    val PLAYER_ID = ModelKey<MatchParticipantAttributesStats, String> { model -> model.jsonObject["playerId"] as String }
+    val PLAYER_ID = SimpleModelKey<Subject, String>("playerId")
 
-    val REVIVES = ModelKey<MatchParticipantAttributesStats, Int> { model -> model.jsonObject["revives"] as Int }
+    val REVIVES = SimpleModelKey<Subject, Int>("revives")
 
-    val RIDE_DISTANCE = ModelKey<MatchParticipantAttributesStats, Double> { model -> model.jsonObject["rideDistance"] as Double }
+    val RIDE_DISTANCE = SimpleModelKey<Subject, Double>("rideDistance")
 
-    val ROAD_KILLS = ModelKey<MatchParticipantAttributesStats, Int> { model -> model.jsonObject["roadKills"] as Int }
+    val ROAD_KILLS = SimpleModelKey<Subject, Int>("roadKills")
 
-    val SWIM_DISTANCE = ModelKey<MatchParticipantAttributesStats, Double> { model -> model.jsonObject["swimdistance"] as Double }
+    val SWIM_DISTANCE = SimpleModelKey<Subject, Double>("swimDistance")
 
-    val TEAM_KILLS = ModelKey<MatchParticipantAttributesStats, Int> { model -> model.jsonObject["teamKills"] as Int }
+    val TEAM_KILLS = SimpleModelKey<Subject, Int>("teamKills")
 
-    val TIME_SURVIVED = ModelKey<MatchParticipantAttributesStats, Double> { model -> model.jsonObject["timeSurvived"] as Double }
+    val TIME_SURVIVED = SimpleModelKey<Subject, Double>("timeSurvived")
 
-    val VEHICLE_DESTROYS = ModelKey<MatchParticipantAttributesStats, Int> { model -> model.jsonObject["vehicleDestroys"] as Int }
+    val VEHICLE_DESTROYS = SimpleModelKey<Subject, Int>("vehicleDestroys")
 
-    val WALK_DISTANCE = ModelKey<MatchParticipantAttributesStats, Double> { model -> model.jsonObject["walkDistance"] as Double }
+    val WALK_DISTANCE = SimpleModelKey<Subject, Double>("walkDistance")
 
-    val WEAPONS_ACQUIRED = ModelKey<MatchParticipantAttributesStats, Int> { model -> model.jsonObject["weaponsAcquired"] as Int }
+    val WEAPONS_ACQUIRED = SimpleModelKey<Subject, Int>("weaponsAcquired")
 
-    val WIN_PLACE = ModelKey<MatchParticipantAttributesStats, Int> { model -> model.jsonObject["winPlace"] as Int }
+    val WIN_PLACE = SimpleModelKey<Subject, Int>("winPlace")
 
-    val WIN_POINTS = ModelKey<MatchParticipantAttributesStats, Int> { model -> model.jsonObject["winPoints"] as Int }
+    val WIN_POINTS = SimpleModelKey<Subject, Int>("winPoints")
 
-    val WIN_POINTS_DELTA = ModelKey<MatchParticipantAttributesStats, Double> { model -> model.jsonObject["winPointsDelta"] as Double }
+    val WIN_POINTS_DELTA = SimpleModelKey<Subject, Double>("winPointsDelta")
 
 }

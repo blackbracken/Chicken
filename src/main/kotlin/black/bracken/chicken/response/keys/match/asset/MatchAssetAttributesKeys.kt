@@ -1,6 +1,6 @@
 package black.bracken.chicken.response.keys.match.asset
 
-import black.bracken.chicken.response.ModelKey
+import black.bracken.chicken.response.SimpleModelKey
 import black.bracken.chicken.response.models.MatchAssetAttributes
 import java.net.URL
 import java.time.LocalDateTime
@@ -11,15 +11,12 @@ import java.time.format.DateTimeFormatter
  */
 object MatchAssetAttributesKeys {
 
-    val URL = ModelKey<MatchAssetAttributes, URL> { model -> java.net.URL(model.jsonObject["URL"] as String) }
+    val URL = SimpleModelKey<MatchAssetAttributes, URL>("URL") { any -> URL(any as String) }
 
-    val CREATED_AT = ModelKey<MatchAssetAttributes, LocalDateTime> { model ->
-        LocalDateTime.parse(
-                model.jsonObject["createdAt"] as String,
-                DateTimeFormatter.ofPattern("yyyy-MM-ddTHH:mm:ssZ")
-        )
+    val CREATED_AT = SimpleModelKey<MatchAssetAttributes, LocalDateTime>("createdAt") { any ->
+        LocalDateTime.parse(any as String, DateTimeFormatter.ofPattern("yyyy-MM-ddTHH:mm:ssZ"))
     }
 
-    val NAME = ModelKey<MatchAssetAttributes, String> { model -> model.jsonObject["name"] as String }
+    val NAME = SimpleModelKey<MatchAssetAttributes, String>("name")
 
 }
