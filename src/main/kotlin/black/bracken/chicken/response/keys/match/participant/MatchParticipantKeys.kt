@@ -1,20 +1,17 @@
 package black.bracken.chicken.response.keys.match.participant
 
-import black.bracken.chicken.response.ExtractableJsonModel
-import black.bracken.chicken.response.ModelKey
+import black.bracken.chicken.response.DownModelKey
+import black.bracken.chicken.response.SimpleModelKey
 import black.bracken.chicken.response.models.MatchParticipant
 import black.bracken.chicken.response.models.MatchParticipantAttributes
-import com.beust.klaxon.JsonObject
 
 /**
  * @author BlackBracken
  */
 object MatchParticipantKeys {
 
-    val ID = ModelKey<MatchParticipant, String> { model -> model.jsonObject["id"] as String }
+    val ID = SimpleModelKey<MatchParticipant, String>("id")
 
-    val ATTRIBUTES = ModelKey<MatchParticipant, ExtractableJsonModel<MatchParticipantAttributes>> { model ->
-        ExtractableJsonModel(MatchParticipantAttributes(model.jsonObject["attributes"] as JsonObject))
-    }
+    val ATTRIBUTES = DownModelKey<MatchParticipant, MatchParticipantAttributes>("attributes") { jsonObject -> MatchParticipantAttributes(jsonObject) }
 
 }

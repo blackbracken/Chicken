@@ -4,71 +4,71 @@ import black.bracken.chicken.response.SimpleModelKey
 import black.bracken.chicken.response.models.MatchParticipantAttributesStats
 import black.bracken.chicken.response.models.enumerations.DeathType
 
-private typealias Subject = MatchParticipantAttributesStats
+private typealias MPAS = MatchParticipantAttributesStats
 
 /**
  * @author BlackBracken
  */
 object MatchParticipantAttributesStatsKeys {
 
-    val DBNOS = SimpleModelKey<Subject, Int>("DBNOs")
+    val DBNOS = SimpleModelKey<MPAS, Int>("DBNOs")
 
-    val ASSISTS = SimpleModelKey<Subject, Int>("assists")
+    val ASSISTS = SimpleModelKey<MPAS, Int>("assists")
 
-    val BOOSTS = SimpleModelKey<Subject, Int>("boosts")
+    val BOOSTS = SimpleModelKey<MPAS, Int>("boosts")
 
-    val DAMAGE_DEALT = SimpleModelKey<Subject, Double>("damageDealt")
+    val DAMAGE_DEALT = SimpleModelKey<MPAS, Double>("damageDealt")
 
-    val DEATH_TYPE = SimpleModelKey<Subject, DeathType>("deathType") { jsonObject -> DeathType.valueOf(jsonObject as String) }
+    val DEATH_TYPE = SimpleModelKey<MPAS, DeathType>("deathType") { jsonObject -> DeathType.valueOf(jsonObject as String) }
 
-    val HEADSHOT_KILLS = SimpleModelKey<Subject, Int>("headshotKills")
+    val HEADSHOT_KILLS = SimpleModelKey<MPAS, Int>("headshotKills")
 
-    val HEALS = SimpleModelKey<Subject, Int>("heals")
+    val HEALS = SimpleModelKey<MPAS, Int>("heals")
 
-    val KILL_PLACE = SimpleModelKey<Subject, Int>("killPlace")
+    val KILL_PLACE = SimpleModelKey<MPAS, Int>("killPlace")
 
-    val KILL_POINTS = SimpleModelKey<Subject, Int>("killPoints")
+    val KILL_POINTS = SimpleModelKey<MPAS, Int>("killPoints")
 
-    val KILL_POINTS_DELTA = SimpleModelKey<Subject, Double>("killPointsDelta")
+    val KILL_POINTS_DELTA = SimpleModelKey<MPAS, Double>("killPointsDelta")
 
-    val KILL_STREAKS = SimpleModelKey<Subject, Double>("killStreaks")
+    val KILL_STREAKS = SimpleModelKey<MPAS, Double>("killStreaks")
 
-    val KILLS = SimpleModelKey<Subject, Int>("kills")
+    val KILLS = SimpleModelKey<MPAS, Int>("kills")
 
-    val LAST_KILL_POINTS = SimpleModelKey<Subject, Int>("lastKillPoints")
+    val LAST_KILL_POINTS = SimpleModelKey<MPAS, Int>("lastKillPoints")
 
-    val LAST_WIN_POINTS = SimpleModelKey<Subject, Int>("lastWinPoints")
+    val LAST_WIN_POINTS = SimpleModelKey<MPAS, Int>("lastWinPoints")
 
-    val LONGEST_KILL = SimpleModelKey<Subject, Double>("longestKill")
+    val LONGEST_KILL = SimpleModelKey<MPAS, Double>("longestKill")
 
-    val MOST_DAMAGE = SimpleModelKey<Subject, Double>("mostDamage")
+    val MOST_DAMAGE = SimpleModelKey<MPAS, Double>("mostDamage")
 
-    val NAME = SimpleModelKey<Subject, String>("name")
+    val NAME = SimpleModelKey<MPAS, String>("name")
 
-    val PLAYER_ID = SimpleModelKey<Subject, String>("playerId")
+    val PLAYER_ID = SimpleModelKey<MPAS, String>("playerId")
 
-    val REVIVES = SimpleModelKey<Subject, Int>("revives")
+    val REVIVES = SimpleModelKey<MPAS, Int>("revives")
 
-    val RIDE_DISTANCE = SimpleModelKey<Subject, Double>("rideDistance")
+    val RIDE_DISTANCE = SimpleModelKey<MPAS, Double>("rideDistance")
 
-    val ROAD_KILLS = SimpleModelKey<Subject, Int>("roadKills")
+    val ROAD_KILLS = SimpleModelKey<MPAS, Int>("roadKills")
 
-    val SWIM_DISTANCE = SimpleModelKey<Subject, Double>("swimDistance")
+    val SWIM_DISTANCE = SimpleModelKey<MPAS, Double>("swimDistance")
 
-    val TEAM_KILLS = SimpleModelKey<Subject, Int>("teamKills")
+    val TEAM_KILLS = SimpleModelKey<MPAS, Int>("teamKills")
 
-    val TIME_SURVIVED = SimpleModelKey<Subject, Double>("timeSurvived")
+    val TIME_SURVIVED = SimpleModelKey<MPAS, Double>("timeSurvived")
 
-    val VEHICLE_DESTROYS = SimpleModelKey<Subject, Int>("vehicleDestroys")
+    val VEHICLE_DESTROYS = SimpleModelKey<MPAS, Int>("vehicleDestroys")
 
-    val WALK_DISTANCE = SimpleModelKey<Subject, Double>("walkDistance")
+    val WALK_DISTANCE = SimpleModelKey<MPAS, Double>("walkDistance")
 
-    val WEAPONS_ACQUIRED = SimpleModelKey<Subject, Int>("weaponsAcquired")
+    val WEAPONS_ACQUIRED = SimpleModelKey<MPAS, Int>("weaponsAcquired")
 
-    val WIN_PLACE = SimpleModelKey<Subject, Int>("winPlace")
+    val WIN_PLACE = SimpleModelKey<MPAS, Int>("winPlace")
 
-    val WIN_POINTS = SimpleModelKey<Subject, Int>("winPoints")
+    val WIN_POINTS = SimpleModelKey<MPAS, Int>("winPoints")
 
-    val WIN_POINTS_DELTA = SimpleModelKey<Subject, Double>("winPointsDelta")
+    val WIN_POINTS_DELTA = SimpleModelKey<MPAS, Double>("winPointsDelta")
 
 }

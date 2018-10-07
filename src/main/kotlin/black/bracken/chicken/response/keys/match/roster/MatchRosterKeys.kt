@@ -1,20 +1,19 @@
 package black.bracken.chicken.response.keys.match.roster
 
-import black.bracken.chicken.response.ExtractableJsonModel
-import black.bracken.chicken.response.ModelKey
+import black.bracken.chicken.response.DownModelKey
+import black.bracken.chicken.response.SimpleModelKey
 import black.bracken.chicken.response.models.MatchRoster
 import black.bracken.chicken.response.models.MatchRosterAttributes
-import com.beust.klaxon.JsonObject
 
 /**
  * @author BlackBracken
  */
 object MatchRosterKeys {
 
-    val ID = ModelKey<MatchRoster, String> { model -> model.jsonObject["id"] as String }
+    val ID = SimpleModelKey<MatchRoster, String>("id")
 
-    val ATTRIBUTES = ModelKey<MatchRoster, ExtractableJsonModel<MatchRosterAttributes>> { model ->
-        ExtractableJsonModel(MatchRosterAttributes(model.jsonObject["attributes"] as JsonObject))
+    val ATTRIBUTES = DownModelKey<MatchRoster, MatchRosterAttributes>("attributes") { jsonObject ->
+        MatchRosterAttributes(jsonObject)
     }
 
 }

@@ -1,6 +1,6 @@
 package black.bracken.chicken.response.keys.player
 
-import black.bracken.chicken.response.ModelKey
+import black.bracken.chicken.response.SimpleModelKey
 import black.bracken.chicken.response.models.PlayerAttributes
 import black.bracken.chicken.response.models.enumerations.region.RegionShard
 
@@ -11,12 +11,12 @@ import black.bracken.chicken.response.models.enumerations.region.RegionShard
  */
 object PlayerAttributesKeys {
 
-    val NAME = ModelKey<PlayerAttributes, String> { model -> model.jsonObject["name"] as String }
+    val NAME = SimpleModelKey<PlayerAttributes, String>("name")
 
-    val SHARD_ID = ModelKey<PlayerAttributes, RegionShard> { model -> RegionShard.valueOf(model.jsonObject["shardId"] as String) }
+    val SHARD_ID = SimpleModelKey<PlayerAttributes, RegionShard>("shardId") { any -> RegionShard.valueOf(any as String) }
 
-    val PATCH_VERSION = ModelKey<PlayerAttributes, String> { model -> model.jsonObject["patchVersion"] as String }
+    val PATCH_VERSION = SimpleModelKey<PlayerAttributes, String>("patchVersion")
 
-    val TITLE_ID = ModelKey<PlayerAttributes, String> { model -> model.jsonObject["titleId"] as String }
+    val TITLE_ID = SimpleModelKey<PlayerAttributes, String>("titleId")
 
 }

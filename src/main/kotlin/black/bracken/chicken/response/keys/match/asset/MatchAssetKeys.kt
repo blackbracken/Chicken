@@ -5,8 +5,6 @@ import black.bracken.chicken.response.SimpleModelKey
 import black.bracken.chicken.response.models.MatchAsset
 import black.bracken.chicken.response.models.MatchAssetAttributes
 
-private typealias Subject = MatchAsset
-
 /**
  * @author BlackBracken
  */

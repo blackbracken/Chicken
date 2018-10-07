@@ -1,6 +1,6 @@
 package black.bracken.chicken.response.keys.match
 
-import black.bracken.chicken.response.ModelKey
+import black.bracken.chicken.response.SimpleModelKey
 import black.bracken.chicken.response.models.MatchAttributes
 import black.bracken.chicken.response.models.enumerations.GameMode
 import black.bracken.chicken.response.models.enumerations.MapName
@@ -13,31 +13,23 @@ import java.time.format.DateTimeFormatter
  */
 object MatchAttributesKeys {
 
-    val CREATED_AT = ModelKey<MatchAttributes, LocalDateTime> { model ->
+    val CREATED_AT = SimpleModelKey<MatchAttributes, LocalDateTime>("createdAt") { any ->
         LocalDateTime.parse(
-                model.jsonObject["createdAt"] as String,
+                any as String,
                 DateTimeFormatter.ofPattern("yyyy-MM-ddTHH:mm:ssZ")
         )
     }
 
-    val DURATION = ModelKey<MatchAttributes, Int> { model -> model.jsonObject["duration"] as Int }
+    val DURATION = SimpleModelKey<MatchAttributes, Int>("duration")
 
-    val GAME_MODE = ModelKey<MatchAttributes, GameMode> { model ->
-        GameMode.valueOf((model.jsonObject["gameMode"] as String).toUpperCase())
-    }
+    val GAME_MODE = SimpleModelKey<MatchAttributes, GameMode>("gameMode") { any -> GameMode.valueOf(any as String) }
 
-    val MAP_NAME = ModelKey<MatchAttributes, MapName> { model ->
-        MapName.valueOf((model.jsonObject["mapName"] as String).toUpperCase())
-    }
+    val MAP_NAME = SimpleModelKey<MatchAttributes, MapName>("mapName") { any -> MapName.valueOf(any as String) }
 
-    val IS_CUSTOM_MATCH = ModelKey<MatchAttributes, Boolean> { model ->
-        (model.jsonObject["isCustomMatch"] as String).toBoolean()
-    }
+    val IS_CUSTOM_MATCH = SimpleModelKey<MatchAttributes, Boolean>("isCustomMatch")
 
-    val SHARD_ID = ModelKey<MatchAttributes, RegionShard> { model ->
-        RegionShard.valueOf(model.jsonObject["shardId"] as String)
-    }
+    val SHARD_ID = SimpleModelKey<MatchAttributes, RegionShard>("shardId") { any -> RegionShard.valueOf(any as String) }
 
-    val TITLE_ID = ModelKey<MatchAttributes, String> { model -> model.jsonObject["titleId"] as String }
+    val TITLE_ID = SimpleModelKey<MatchAttributes, String>("titleId")
 
 }

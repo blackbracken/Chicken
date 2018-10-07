@@ -1,6 +1,6 @@
 package black.bracken.chicken.response.keys.player
 
-import black.bracken.chicken.response.ModelKey
+import black.bracken.chicken.response.SimpleModelKey
 import black.bracken.chicken.response.models.PlayerMatch
 
 /**
@@ -10,6 +10,6 @@ import black.bracken.chicken.response.models.PlayerMatch
  */
 object PlayerMatchKeys {
 
-    val ID = ModelKey<PlayerMatch, String> { model -> model.jsonObject["id"] as String }
+    val ID = SimpleModelKey<PlayerMatch, String>("id")
 
 }
