@@ -6,6 +6,7 @@ import black.bracken.chicken.model.ExtractableJsonModel
 import black.bracken.chicken.model.Match
 import black.bracken.chicken.model.MatchAttributes
 import black.bracken.chicken.model.MatchRelationships
+import com.beust.klaxon.JsonObject
 
 /**
  * @author BlackBracken
@@ -14,9 +15,9 @@ object MatchKeys {
 
     val ID = SimpleModelKey<Match, String>("id")
 
-    val ATTRIBUTES = DownModelKey<Match, MatchAttributes>("attributes") { jsonObject -> MatchAttributes(jsonObject) }
+    val ATTRIBUTES = DownModelKey<Match, MatchAttributes>("attributes") { jsonObject -> MatchAttributes(jsonObject["data"] as JsonObject) }
 
-    val RELATIONSHIPS = DownModelKey<Match, MatchRelationships>("relationships") { jsonObject -> MatchRelationships(jsonObject) }
+    val RELATIONSHIPS = DownModelKey<Match, MatchRelationships>("relationships") { jsonObject -> MatchRelationships(jsonObject["data"] as JsonObject) }
 
 }
 

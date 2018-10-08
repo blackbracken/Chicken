@@ -25,6 +25,7 @@ object PlayerKeys {
 val ExtractableJsonModel<Player>.id get() = this[PlayerKeys.ID]
 val ExtractableJsonModel<Player>.attributes get() = this[PlayerKeys.ATTRIBUTES]
 val ExtractableJsonModel<Player>.relationships get() = this[PlayerKeys.RELATIONSHIPS]
+
 val ExtractableJsonModel<Player>.name get() = attributes[PlayerAttributesKeys.NAME]
 val ExtractableJsonModel<Player>.shard get() = attributes[PlayerAttributesKeys.SHARD_ID]
 val ExtractableJsonModel<Player>.patchVersion get() = attributes[PlayerAttributesKeys.PATCH_VERSION]
