@@ -16,7 +16,7 @@ object PlayerRelationshipsKeys {
 
     @Suppress("UNCHECKED_CAST")
     val MATCHES = ModelKey<PlayerRelationships, List<ExtractableJsonModel<PlayerMatch>>> { model ->
-        (model.jsonObject["matches"] as JsonArray<JsonObject>).map { jsonObject -> ExtractableJsonModel(PlayerMatch(jsonObject)) }
+        ((model.jsonObject["matches"] as JsonObject)["data"] as JsonArray<JsonObject>).map { jsonObject -> ExtractableJsonModel(PlayerMatch(jsonObject)) }
     }
 
 }
