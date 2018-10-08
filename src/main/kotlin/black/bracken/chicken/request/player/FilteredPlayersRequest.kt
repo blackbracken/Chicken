@@ -1,10 +1,10 @@
 package black.bracken.chicken.request.player
 
 import black.bracken.chicken.ChickenClient
-import black.bracken.chicken.request.Request
 import black.bracken.chicken.model.ExtractableJsonModel
 import black.bracken.chicken.model.Player
 import black.bracken.chicken.model.enumerations.region.RegionShard
+import black.bracken.chicken.request.Request
 import com.beust.klaxon.JsonArray
 import com.beust.klaxon.JsonObject
 import okhttp3.HttpUrl
@@ -23,7 +23,7 @@ class FilteredPlayersRequest(
     ) {
 
         init {
-            if (idList.isEmpty() && nameList.isEmpty()) throw IllegalArgumentException("Either idList or nameList must not be empty")
+            if (idList.isEmpty() && nameList.isEmpty()) throw IllegalArgumentException("Either idList or nameList must be filled")
             if (idList.isNotEmpty() && nameList.isNotEmpty()) throw IllegalArgumentException("Either idList or nameList must be empty")
         }
 
