@@ -1,10 +1,12 @@
 package black.bracken.chicken.key.match.participant
 
 import black.bracken.chicken.key.SimpleModelKey
+import black.bracken.chicken.model.ExtractableJsonModel
 import black.bracken.chicken.model.MatchParticipantAttributesStats
 import black.bracken.chicken.model.enumerations.DeathType
 
 private typealias MPAS = MatchParticipantAttributesStats
+private typealias MPASKeys = MatchParticipantAttributesStatsKeys
 
 /**
  * @author BlackBracken
@@ -72,3 +74,34 @@ object MatchParticipantAttributesStatsKeys {
     val WIN_POINTS_DELTA = SimpleModelKey<MPAS, Double>("winPointsDelta")
 
 }
+
+val ExtractableJsonModel<MPAS>.dbnos get() = this[MPASKeys.DBNOS]
+val ExtractableJsonModel<MPAS>.assists get() = this[MPASKeys.ASSISTS]
+val ExtractableJsonModel<MPAS>.boosts get() = this[MPASKeys.BOOSTS]
+val ExtractableJsonModel<MPAS>.damageDealt get() = this[MPASKeys.DAMAGE_DEALT]
+val ExtractableJsonModel<MPAS>.deathType get() = this[MPASKeys.DEATH_TYPE]
+val ExtractableJsonModel<MPAS>.headshotKills get() = this[MPASKeys.HEADSHOT_KILLS]
+val ExtractableJsonModel<MPAS>.heals get() = this[MPASKeys.HEALS]
+val ExtractableJsonModel<MPAS>.killPlace get() = this[MPASKeys.KILL_PLACE]
+val ExtractableJsonModel<MPAS>.killPoints get() = this[MPASKeys.KILL_POINTS]
+val ExtractableJsonModel<MPAS>.killPointsDelta get() = this[MPASKeys.KILL_POINTS_DELTA]
+val ExtractableJsonModel<MPAS>.killStreaks get() = this[MPASKeys.KILL_STREAKS]
+val ExtractableJsonModel<MPAS>.kills get() = this[MPASKeys.KILLS]
+val ExtractableJsonModel<MPAS>.lastKillPoints get() = this[MPASKeys.LAST_KILL_POINTS]
+val ExtractableJsonModel<MPAS>.lastWinPoints get() = this[MPASKeys.LAST_WIN_POINTS]
+val ExtractableJsonModel<MPAS>.longestKill get() = this[MPASKeys.LONGEST_KILL]
+val ExtractableJsonModel<MPAS>.mostDamage get() = this[MPASKeys.MOST_DAMAGE]
+val ExtractableJsonModel<MPAS>.name get() = this[MPASKeys.NAME]
+val ExtractableJsonModel<MPAS>.playerId get() = this[MPASKeys.PLAYER_ID]
+val ExtractableJsonModel<MPAS>.revives get() = this[MPASKeys.REVIVES]
+val ExtractableJsonModel<MPAS>.rideDistance get() = this[MPASKeys.RIDE_DISTANCE]
+val ExtractableJsonModel<MPAS>.roadKills get() = this[MPASKeys.ROAD_KILLS]
+val ExtractableJsonModel<MPAS>.swimDistance get() = this[MPASKeys.SWIM_DISTANCE]
+val ExtractableJsonModel<MPAS>.teamKills get() = this[MPASKeys.TEAM_KILLS]
+val ExtractableJsonModel<MPAS>.timeSurvived get() = this[MPASKeys.TIME_SURVIVED]
+val ExtractableJsonModel<MPAS>.vehicleDestroys get() = this[MPASKeys.VEHICLE_DESTROYS]
+val ExtractableJsonModel<MPAS>.walkDistance get() = this[MPASKeys.WALK_DISTANCE]
+val ExtractableJsonModel<MPAS>.weaponsAcquired get() = this[MPASKeys.WEAPONS_ACQUIRED]
+val ExtractableJsonModel<MPAS>.winPlace get() = this[MPASKeys.WIN_PLACE]
+val ExtractableJsonModel<MPAS>.winPoints get() = this[MPASKeys.WIN_POINTS]
+val ExtractableJsonModel<MPAS>.winPointsDelta get() = this[MPASKeys.WIN_POINTS_DELTA]

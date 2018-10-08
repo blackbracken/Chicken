@@ -20,5 +20,4 @@ object MatchRosterKeys {
 }
 
 val ExtractableJsonModel<MatchRoster>.id get() = this[MatchRosterKeys.ID]
-
 val ExtractableJsonModel<MatchRoster>.attributes get() = this[MatchRosterKeys.ATTRIBUTES]

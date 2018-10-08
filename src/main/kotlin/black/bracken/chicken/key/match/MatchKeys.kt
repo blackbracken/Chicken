@@ -21,7 +21,5 @@ object MatchKeys {
 }
 
 val ExtractableJsonModel<Match>.id get() = this[MatchKeys.ID]
-
 val ExtractableJsonModel<Match>.attributes get() = this[MatchKeys.ATTRIBUTES]
-
 val ExtractableJsonModel<Match>.relationships get() = this[MatchKeys.RELATIONSHIPS]

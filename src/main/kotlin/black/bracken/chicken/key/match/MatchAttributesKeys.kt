@@ -1,6 +1,7 @@
 package black.bracken.chicken.key.match
 
 import black.bracken.chicken.key.SimpleModelKey
+import black.bracken.chicken.model.ExtractableJsonModel
 import black.bracken.chicken.model.MatchAttributes
 import black.bracken.chicken.model.enumerations.GameMode
 import black.bracken.chicken.model.enumerations.MapName
@@ -33,3 +34,11 @@ object MatchAttributesKeys {
     val TITLE_ID = SimpleModelKey<MatchAttributes, String>("titleId")
 
 }
+
+val ExtractableJsonModel<MatchAttributes>.createdAt get() = this[MatchAttributesKeys.CREATED_AT]
+val ExtractableJsonModel<MatchAttributes>.duration get() = this[MatchAttributesKeys.DURATION]
+val ExtractableJsonModel<MatchAttributes>.gameMode get() = this[MatchAttributesKeys.GAME_MODE]
+val ExtractableJsonModel<MatchAttributes>.mapName get() = this[MatchAttributesKeys.MAP_NAME]
+val ExtractableJsonModel<MatchAttributes>.isCustomMatch get() = this[MatchAttributesKeys.IS_CUSTOM_MATCH]
+val ExtractableJsonModel<MatchAttributes>.shardId get() = this[MatchAttributesKeys.SHARD_ID]
+val ExtractableJsonModel<MatchAttributes>.titleId get() = this[MatchAttributesKeys.TITLE_ID]

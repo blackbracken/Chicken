@@ -1,6 +1,7 @@
 package black.bracken.chicken.key.match.asset
 
 import black.bracken.chicken.key.SimpleModelKey
+import black.bracken.chicken.model.ExtractableJsonModel
 import black.bracken.chicken.model.MatchAssetAttributes
 import java.net.URL
 import java.time.LocalDateTime
@@ -20,3 +21,7 @@ object MatchAssetAttributesKeys {
     val NAME = SimpleModelKey<MatchAssetAttributes, String>("name")
 
 }
+
+val ExtractableJsonModel<MatchAssetAttributes>.url get() = this[MatchAssetAttributesKeys.URL]
+val ExtractableJsonModel<MatchAssetAttributes>.createdAt get() = this[MatchAssetAttributesKeys.CREATED_AT]
+val ExtractableJsonModel<MatchAssetAttributes>.name get() = this[MatchAssetAttributesKeys.NAME]

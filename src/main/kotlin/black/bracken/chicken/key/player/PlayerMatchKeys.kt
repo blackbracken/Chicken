@@ -15,4 +15,4 @@ object PlayerMatchKeys {
 
 }
 
-val ExtractableJsonModel<PlayerMatch>.id: String get() = this[PlayerMatchKeys.ID]
+val ExtractableJsonModel<PlayerMatch>.id get() = this[PlayerMatchKeys.ID]
