@@ -23,3 +23,8 @@ object MatchKeys {
 val ExtractableJsonModel<Match>.id get() = this[MatchKeys.ID]
 val ExtractableJsonModel<Match>.attributes get() = this[MatchKeys.ATTRIBUTES]
 val ExtractableJsonModel<Match>.relationships get() = this[MatchKeys.RELATIONSHIPS]
+val ExtractableJsonModel<Match>.included get() = this[MatchKeys.INCLUDED]
+
+val ExtractableJsonModel<Match>.rosters get() = this.included.rosters
+val ExtractableJsonModel<Match>.participants get() = this.included.participants
+val ExtractableJsonModel<Match>.assets get() = this.included.assets
