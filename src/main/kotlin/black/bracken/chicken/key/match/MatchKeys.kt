@@ -2,10 +2,7 @@ package black.bracken.chicken.key.match
 
 import black.bracken.chicken.key.DownModelKey
 import black.bracken.chicken.key.SimpleModelKey
-import black.bracken.chicken.model.ExtractableJsonModel
-import black.bracken.chicken.model.Match
-import black.bracken.chicken.model.MatchAttributes
-import black.bracken.chicken.model.MatchRelationships
+import black.bracken.chicken.model.*
 import com.beust.klaxon.JsonObject
 
 /**
@@ -18,6 +15,8 @@ object MatchKeys {
     val ATTRIBUTES = DownModelKey<Match, MatchAttributes>("attributes") { jsonObject -> MatchAttributes(jsonObject["data"] as JsonObject) }
 
     val RELATIONSHIPS = DownModelKey<Match, MatchRelationships>("relationships") { jsonObject -> MatchRelationships(jsonObject["data"] as JsonObject) }
+
+    val INCLUDED = DownModelKey<Match, MatchIncluded>("included") { jsonObject -> MatchIncluded(jsonObject) }
 
 }
 
