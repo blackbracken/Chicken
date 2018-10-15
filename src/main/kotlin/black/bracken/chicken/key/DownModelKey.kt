@@ -1,6 +1,6 @@
 package black.bracken.chicken.key
 
-import black.bracken.chicken.model.ExtractableJsonModel
+import black.bracken.chicken.model.ModelDealer
 import black.bracken.chicken.model.JsonModel
 import com.beust.klaxon.JsonObject
 
@@ -10,6 +10,6 @@ import com.beust.klaxon.JsonObject
 class DownModelKey<M : JsonModel, R : JsonModel>(
         private val id: String,
         private val instantiate: (JsonObject) -> R
-) : ModelKey<M, ExtractableJsonModel<R>>(
-        { model -> ExtractableJsonModel(instantiate(model.jsonObject[id] as JsonObject)) }
+) : ModelKey<M, ModelDealer<R>>(
+        { model -> ModelDealer(instantiate(model.jsonObject[id] as JsonObject)) }
 )

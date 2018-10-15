@@ -1,7 +1,7 @@
 package black.bracken.chicken.key.tournaments
 
 import black.bracken.chicken.key.ModelKey
-import black.bracken.chicken.model.ExtractableJsonModel
+import black.bracken.chicken.model.ModelDealer
 import black.bracken.chicken.model.TournamentIncluded
 import black.bracken.chicken.model.TournamentIncludedMatch
 import com.beust.klaxon.JsonObject
@@ -11,12 +11,12 @@ import com.beust.klaxon.JsonObject
  */
 object TournamentIncludedKeys {
 
-    val MATCHES = ModelKey<TournamentIncluded, List<ExtractableJsonModel<TournamentIncludedMatch>>> { model ->
+    val MATCHES = ModelKey<TournamentIncluded, List<ModelDealer<TournamentIncludedMatch>>> { model ->
         model.jsonObject.array<JsonObject>("matches")!!
-                .map { jsonObject -> ExtractableJsonModel(TournamentIncludedMatch(jsonObject)) }
+                .map { jsonObject -> ModelDealer(TournamentIncludedMatch(jsonObject)) }
                 .toList()
     }
 
 }
 
-val ExtractableJsonModel<TournamentIncluded>.matches get() = this[TournamentIncludedKeys.MATCHES]
+val ModelDealer<TournamentIncluded>.matches get() = this[TournamentIncludedKeys.MATCHES]

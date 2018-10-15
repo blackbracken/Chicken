@@ -5,7 +5,7 @@ import black.bracken.chicken.key.ModelKey
 /**
  * @author BlackBracken
  */
-class ExtractableJsonModel<M : JsonModel>(private val model: M) {
+class ModelDealer<M : JsonModel>(private val model: M) {
 
     operator fun <R : Any> get(key: ModelKey<M, R>): R = key.extract(model)
 

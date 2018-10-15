@@ -1,7 +1,7 @@
 package black.bracken.chicken.key.player
 
 import black.bracken.chicken.key.SimpleModelKey
-import black.bracken.chicken.model.ExtractableJsonModel
+import black.bracken.chicken.model.ModelDealer
 import black.bracken.chicken.model.PlayerAttributes
 import black.bracken.chicken.model.enumerations.region.RegionShard
 
@@ -22,7 +22,7 @@ object PlayerAttributesKeys {
 
 }
 
-val ExtractableJsonModel<PlayerAttributes>.name: String get() = this[PlayerAttributesKeys.NAME]
-val ExtractableJsonModel<PlayerAttributes>.shardId: RegionShard get() = this[PlayerAttributesKeys.SHARD_ID]
-val ExtractableJsonModel<PlayerAttributes>.patchVersion: String get() = this[PlayerAttributesKeys.PATCH_VERSION]
-val ExtractableJsonModel<PlayerAttributes>.titleId: String get() = this[PlayerAttributesKeys.TITLE_ID]
+val ModelDealer<PlayerAttributes>.name: String get() = this[PlayerAttributesKeys.NAME]
+val ModelDealer<PlayerAttributes>.shardId: RegionShard get() = this[PlayerAttributesKeys.SHARD_ID]
+val ModelDealer<PlayerAttributes>.patchVersion: String get() = this[PlayerAttributesKeys.PATCH_VERSION]
+val ModelDealer<PlayerAttributes>.titleId: String get() = this[PlayerAttributesKeys.TITLE_ID]

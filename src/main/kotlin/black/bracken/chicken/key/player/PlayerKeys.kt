@@ -2,7 +2,7 @@ package black.bracken.chicken.key.player
 
 import black.bracken.chicken.key.DownModelKey
 import black.bracken.chicken.key.SimpleModelKey
-import black.bracken.chicken.model.ExtractableJsonModel
+import black.bracken.chicken.model.ModelDealer
 import black.bracken.chicken.model.Player
 import black.bracken.chicken.model.PlayerAttributes
 import black.bracken.chicken.model.PlayerRelationships
@@ -22,12 +22,12 @@ object PlayerKeys {
 
 }
 
-val ExtractableJsonModel<Player>.id get() = this[PlayerKeys.ID]
-val ExtractableJsonModel<Player>.attributes get() = this[PlayerKeys.ATTRIBUTES]
-val ExtractableJsonModel<Player>.relationships get() = this[PlayerKeys.RELATIONSHIPS]
+val ModelDealer<Player>.id get() = this[PlayerKeys.ID]
+val ModelDealer<Player>.attributes get() = this[PlayerKeys.ATTRIBUTES]
+val ModelDealer<Player>.relationships get() = this[PlayerKeys.RELATIONSHIPS]
 
-val ExtractableJsonModel<Player>.name get() = attributes[PlayerAttributesKeys.NAME]
-val ExtractableJsonModel<Player>.shard get() = attributes[PlayerAttributesKeys.SHARD_ID]
-val ExtractableJsonModel<Player>.patchVersion get() = attributes[PlayerAttributesKeys.PATCH_VERSION]
-val ExtractableJsonModel<Player>.titleId get() = attributes[PlayerAttributesKeys.TITLE_ID]
-val ExtractableJsonModel<Player>.matches get() = relationships[PlayerRelationshipsKeys.MATCHES]
+val ModelDealer<Player>.name get() = attributes[PlayerAttributesKeys.NAME]
+val ModelDealer<Player>.shard get() = attributes[PlayerAttributesKeys.SHARD_ID]
+val ModelDealer<Player>.patchVersion get() = attributes[PlayerAttributesKeys.PATCH_VERSION]
+val ModelDealer<Player>.titleId get() = attributes[PlayerAttributesKeys.TITLE_ID]
+val ModelDealer<Player>.matches get() = relationships[PlayerRelationshipsKeys.MATCHES]

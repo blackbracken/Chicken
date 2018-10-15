@@ -2,7 +2,7 @@ package black.bracken.chicken.key.tournaments
 
 import black.bracken.chicken.key.DownModelKey
 import black.bracken.chicken.key.SimpleModelKey
-import black.bracken.chicken.model.ExtractableJsonModel
+import black.bracken.chicken.model.ModelDealer
 import black.bracken.chicken.model.Tournament
 import black.bracken.chicken.model.TournamentIncluded
 import black.bracken.chicken.model.TournamentRelationships
@@ -23,6 +23,6 @@ object TournamentKeys {
 
 }
 
-val ExtractableJsonModel<Tournament>.id get() = this[TournamentKeys.ID]
-val ExtractableJsonModel<Tournament>.relationships get() = this[TournamentKeys.RELATIONSHIPS]
-val ExtractableJsonModel<Tournament>.included get() = this[TournamentKeys.INCLUDED]
+val ModelDealer<Tournament>.id get() = this[TournamentKeys.ID]
+val ModelDealer<Tournament>.relationships get() = this[TournamentKeys.RELATIONSHIPS]
+val ModelDealer<Tournament>.included get() = this[TournamentKeys.INCLUDED]

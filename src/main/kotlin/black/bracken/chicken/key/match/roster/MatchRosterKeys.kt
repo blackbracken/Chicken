@@ -2,7 +2,7 @@ package black.bracken.chicken.key.match.roster
 
 import black.bracken.chicken.key.DownModelKey
 import black.bracken.chicken.key.SimpleModelKey
-import black.bracken.chicken.model.ExtractableJsonModel
+import black.bracken.chicken.model.ModelDealer
 import black.bracken.chicken.model.MatchRoster
 import black.bracken.chicken.model.MatchRosterAttributes
 
@@ -19,5 +19,5 @@ object MatchRosterKeys {
 
 }
 
-val ExtractableJsonModel<MatchRoster>.id get() = this[MatchRosterKeys.ID]
-val ExtractableJsonModel<MatchRoster>.attributes get() = this[MatchRosterKeys.ATTRIBUTES]
+val ModelDealer<MatchRoster>.id get() = this[MatchRosterKeys.ID]
+val ModelDealer<MatchRoster>.attributes get() = this[MatchRosterKeys.ATTRIBUTES]

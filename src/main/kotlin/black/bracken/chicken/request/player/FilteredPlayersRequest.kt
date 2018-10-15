@@ -1,7 +1,7 @@
 package black.bracken.chicken.request.player
 
 import black.bracken.chicken.ChickenClient
-import black.bracken.chicken.model.ExtractableJsonModel
+import black.bracken.chicken.model.ModelDealer
 import black.bracken.chicken.model.Player
 import black.bracken.chicken.model.enumerations.region.RegionShard
 import black.bracken.chicken.request.Request
@@ -15,7 +15,7 @@ import okhttp3.HttpUrl
 class FilteredPlayersRequest(
         private val regionShard: RegionShard,
         private val filter: Filter
-) : Request<List<ExtractableJsonModel<Player>>> {
+) : Request<List<ModelDealer<Player>>> {
 
     data class Filter(
             val idList: List<String> = listOf(),
@@ -40,6 +40,6 @@ class FilteredPlayersRequest(
             .build()!!
 
     @Suppress("UNCHECKED_CAST")
-    override fun transformJson(jsonObject: JsonObject) = (jsonObject["data"] as JsonArray<JsonObject>).map { childJson -> ExtractableJsonModel(Player(childJson)) }
+    override fun transformJson(jsonObject: JsonObject) = (jsonObject["data"] as JsonArray<JsonObject>).map { childJson -> ModelDealer(Player(childJson)) }
 
 }

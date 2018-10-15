@@ -1,7 +1,7 @@
 package black.bracken.chicken.key.player
 
 import black.bracken.chicken.key.ModelKey
-import black.bracken.chicken.model.ExtractableJsonModel
+import black.bracken.chicken.model.ModelDealer
 import black.bracken.chicken.model.PlayerMatch
 import black.bracken.chicken.model.PlayerRelationships
 import com.beust.klaxon.JsonArray
@@ -15,10 +15,10 @@ import com.beust.klaxon.JsonObject
 object PlayerRelationshipsKeys {
 
     @Suppress("UNCHECKED_CAST")
-    val MATCHES = ModelKey<PlayerRelationships, List<ExtractableJsonModel<PlayerMatch>>> { model ->
-        ((model.jsonObject["matches"] as JsonObject)["data"] as JsonArray<JsonObject>).map { jsonObject -> ExtractableJsonModel(PlayerMatch(jsonObject)) }
+    val MATCHES = ModelKey<PlayerRelationships, List<ModelDealer<PlayerMatch>>> { model ->
+        ((model.jsonObject["matches"] as JsonObject)["data"] as JsonArray<JsonObject>).map { jsonObject -> ModelDealer(PlayerMatch(jsonObject)) }
     }
 
 }
 
-val ExtractableJsonModel<PlayerRelationships>.matches get() = this[PlayerRelationshipsKeys.MATCHES]
+val ModelDealer<PlayerRelationships>.matches get() = this[PlayerRelationshipsKeys.MATCHES]

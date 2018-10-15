@@ -1,7 +1,7 @@
 package black.bracken.chicken.key.tournaments
 
 import black.bracken.chicken.key.SimpleModelKey
-import black.bracken.chicken.model.ExtractableJsonModel
+import black.bracken.chicken.model.ModelDealer
 import black.bracken.chicken.model.TournamentIncludedMatch
 
 /**
@@ -13,4 +13,4 @@ object TournamentIncludedMatchKeys {
 
 }
 
-val ExtractableJsonModel<TournamentIncludedMatch>.id get() = this[TournamentIncludedMatchKeys.ID]
+val ModelDealer<TournamentIncludedMatch>.id get() = this[TournamentIncludedMatchKeys.ID]

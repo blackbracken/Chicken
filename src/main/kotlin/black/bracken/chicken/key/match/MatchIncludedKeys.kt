@@ -4,7 +4,7 @@ import black.bracken.chicken.key.ModelKey
 import black.bracken.chicken.model.*
 import com.beust.klaxon.JsonObject
 
-private typealias IncludedChildModelKey<C> = ModelKey<MatchIncluded, List<ExtractableJsonModel<C>>>
+private typealias IncludedChildModelKey<C> = ModelKey<MatchIncluded, List<ModelDealer<C>>>
 
 /**
  * @author BlackBracken
@@ -14,12 +14,12 @@ object MatchIncludedKeys {
     private class ChildModelKey<C : MatchIncludedChild>(
             private val typeName: String,
             private val instantiate: (JsonObject) -> C
-    ) : ModelKey<MatchIncluded, List<ExtractableJsonModel<C>>>({ model ->
+    ) : ModelKey<MatchIncluded, List<ModelDealer<C>>>({ model ->
         model.jsonObject.values
                 .asSequence()
                 .mapNotNull { it as? JsonObject }
                 .filter { jsonObject -> jsonObject.getOrDefault("type", "") == typeName }
-                .map { jsonObject -> ExtractableJsonModel(instantiate(jsonObject)) }
+                .map { jsonObject -> ModelDealer(instantiate(jsonObject)) }
                 .toList()
     })
 
@@ -31,6 +31,6 @@ object MatchIncludedKeys {
 
 }
 
-val ExtractableJsonModel<MatchIncluded>.rosters get() = this[MatchIncludedKeys.ROSTERS]
-val ExtractableJsonModel<MatchIncluded>.participants get() = this[MatchIncludedKeys.PARTICIPANTS]
-val ExtractableJsonModel<MatchIncluded>.assets get() = this[MatchIncludedKeys.ASSETS]
+val ModelDealer<MatchIncluded>.rosters get() = this[MatchIncludedKeys.ROSTERS]
+val ModelDealer<MatchIncluded>.participants get() = this[MatchIncludedKeys.PARTICIPANTS]
+val ModelDealer<MatchIncluded>.assets get() = this[MatchIncludedKeys.ASSETS]
