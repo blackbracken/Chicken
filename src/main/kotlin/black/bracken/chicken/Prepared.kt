@@ -31,7 +31,7 @@ class Prepared<R : Any> internal constructor(
      * @throws [ExceedRateLimitException] if exceeded rate limit.
      * @throws [IllegalRequestException] if received response-code is not 200 and unexpected.
      */
-    fun complete(): R {
+    fun complete(): R? {
         val response = call().execute()
 
         // error handling
@@ -44,7 +44,16 @@ class Prepared<R : Any> internal constructor(
             else -> throw IllegalRequestException(response.code())
         }
 
-        return transform(parser.parse(StringBuilder(response.decodedBody)) as JsonObject)
+        return transform(parser.parse(StringBuilder(response.decodedBody ?: return null)) as JsonObject)
+    }
+
+    /**
+     * Submits [call] **while blocking** then returns the received value is transformed into [R] if success otherwise null; done in synchronous.
+     */
+    fun completeSilently(): R? = try {
+        complete()
+    } catch (ignored: Exception) {
+        null
     }
 
     /**
@@ -53,7 +62,7 @@ class Prepared<R : Any> internal constructor(
      *
      * @see [complete] Throws exceptions same as [complete] in [failure]
      */
-    fun queue(success: (R) -> Unit, failure: ((Throwable) -> Unit)): Unit = thread {
+    fun queue(success: (R?) -> Unit, failure: ((Throwable) -> Unit)): Unit = thread {
         try {
             success(complete())
         } catch (throwable: Throwable) {
@@ -67,6 +76,6 @@ class Prepared<R : Any> internal constructor(
      *
      * @see [complete] Throws exceptions same as [complete]
      */
-    fun queue(success: (R) -> Unit): Unit = queue(success) { throw it }
+    fun queue(success: (R?) -> Unit): Unit = queue(success) { throw it }
 
 }

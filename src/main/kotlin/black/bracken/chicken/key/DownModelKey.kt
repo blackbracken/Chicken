@@ -1,7 +1,7 @@
 package black.bracken.chicken.key
 
-import black.bracken.chicken.model.ModelDealer
 import black.bracken.chicken.model.JsonModel
+import black.bracken.chicken.model.ModelDealer
 import com.beust.klaxon.JsonObject
 
 /**
