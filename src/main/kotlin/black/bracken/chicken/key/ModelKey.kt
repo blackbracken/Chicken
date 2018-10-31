@@ -7,4 +7,4 @@ import black.bracken.chicken.model.JsonModel
  *
  * @author BlackBracken
  */
-open class ModelKey<M : JsonModel, out R : Any>(val extract: (M) -> R)
+open class ModelKey<in M : JsonModel, out R : Any>(val extract: (M) -> R)

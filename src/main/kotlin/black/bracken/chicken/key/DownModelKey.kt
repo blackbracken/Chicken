@@ -7,7 +7,7 @@ import com.beust.klaxon.JsonObject
 /**
  * @author BlackBracken
  */
-class DownModelKey<M : JsonModel, R : JsonModel>(
+class DownModelKey<in M : JsonModel, R : JsonModel>(
         private val id: String,
         private val instantiate: (JsonObject) -> R
 ) : ModelKey<M, ModelDealer<R>>(
