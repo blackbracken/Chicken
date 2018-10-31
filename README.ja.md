@@ -4,7 +4,7 @@
 
 Chickenは、記述の簡潔さと柔軟性を併せ持ったKotlinのためのPUBG APIラッパーです。
 
-ドキュメントは[kdoc](https://bracken.black/Chicken/)を参照してください。
+公式ドキュメントは[PUBG DEVELOPERS API](https://developer.pubg.com/)、Chickenのドキュメントは[kdoc](https://bracken.black/Chicken/)を参照してください。
 
 ```kotlin
 fun main(args: Array<String>) {
@@ -29,6 +29,16 @@ fun main(args: Array<String>) {
             println("happened $throwable: ${throwable.message}")
         }
     )
+    
+    // モデルから値を抽出するキーを自分で作成することもできます
+    // 例としてPlayerからhogeというStringを持つキーに対応したModelKeyを作成し, 拡張します
+    player[PlayerKeys.NAME] // これは`player.name`の糖衣を外したもので等しい
+    
+    val originalHogeKey = SimpleModelKey<Player, String>("hoge")
+    val ModelDealer<Player>.hoge
+        get() = this[originalHogeKey]
+        
+    player.hoge // => String
 }
 ```
 
