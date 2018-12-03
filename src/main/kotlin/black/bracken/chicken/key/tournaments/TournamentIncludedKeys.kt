@@ -13,7 +13,7 @@ object TournamentIncludedKeys {
 
     val MATCHES = ModelKey<TournamentIncluded, List<ModelDealer<TournamentIncludedMatch>>> { model ->
         model.jsonObject.array<JsonObject>("matches")!!
-                .map { jsonObject -> ModelDealer(TournamentIncludedMatch(jsonObject)) }
+                .map { ModelDealer(TournamentIncludedMatch(it)) }
                 .toList()
     }
 

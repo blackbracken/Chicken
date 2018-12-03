@@ -12,11 +12,11 @@ object MatchKeys {
 
     val ID = SimpleModelKey<Match, String>("id")
 
-    val ATTRIBUTES = DownModelKey<Match, MatchAttributes>("attributes") { jsonObject -> MatchAttributes(jsonObject["data"] as JsonObject) }
+    val ATTRIBUTES = DownModelKey<Match, MatchAttributes>("attributes") { MatchAttributes(it["data"] as JsonObject) }
 
-    val RELATIONSHIPS = DownModelKey<Match, MatchRelationships>("relationships") { jsonObject -> MatchRelationships(jsonObject["data"] as JsonObject) }
+    val RELATIONSHIPS = DownModelKey<Match, MatchRelationships>("relationships") { MatchRelationships(it["data"] as JsonObject) }
 
-    val INCLUDED = DownModelKey<Match, MatchIncluded>("included") { jsonObject -> MatchIncluded(jsonObject) }
+    val INCLUDED = DownModelKey<Match, MatchIncluded>("included") { MatchIncluded(it) }
 
 }
 

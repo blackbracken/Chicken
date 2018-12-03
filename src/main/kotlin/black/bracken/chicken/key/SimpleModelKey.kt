@@ -9,4 +9,4 @@ import black.bracken.chicken.model.JsonModel
 class SimpleModelKey<in M : JsonModel, out R : Any>(
         private val id: String,
         private val transform: (Any) -> R = { it as R }
-) : ModelKey<M, R>({ model -> transform(model.jsonObject[id]!!) })
+) : ModelKey<M, R>({ transform(it.jsonObject[id]!!) })

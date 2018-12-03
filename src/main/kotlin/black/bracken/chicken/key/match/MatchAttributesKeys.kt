@@ -14,22 +14,22 @@ import java.time.format.DateTimeFormatter
  */
 object MatchAttributesKeys {
 
-    val CREATED_AT = SimpleModelKey<MatchAttributes, LocalDateTime>("createdAt") { any ->
+    val CREATED_AT = SimpleModelKey<MatchAttributes, LocalDateTime>("createdAt") {
         LocalDateTime.parse(
-                any as String,
+                it as String,
                 DateTimeFormatter.ofPattern("yyyy-MM-ddTHH:mm:ssZ")
         )
     }
 
     val DURATION = SimpleModelKey<MatchAttributes, Int>("duration")
 
-    val GAME_MODE = SimpleModelKey<MatchAttributes, GameMode>("gameMode") { any -> GameMode.valueOf(any as String) }
+    val GAME_MODE = SimpleModelKey<MatchAttributes, GameMode>("gameMode") { GameMode.valueOf(it as String) }
 
-    val MAP_NAME = SimpleModelKey<MatchAttributes, MapName>("mapName") { any -> MapName.valueOf(any as String) }
+    val MAP_NAME = SimpleModelKey<MatchAttributes, MapName>("mapName") { MapName.valueOf(it as String) }
 
     val IS_CUSTOM_MATCH = SimpleModelKey<MatchAttributes, Boolean>("isCustomMatch")
 
-    val SHARD_ID = SimpleModelKey<MatchAttributes, RegionShard>("shardId") { any -> RegionShard.valueOf(any as String) }
+    val SHARD_ID = SimpleModelKey<MatchAttributes, RegionShard>("shardId") { RegionShard.valueOf(it as String) }
 
     val TITLE_ID = SimpleModelKey<MatchAttributes, String>("titleId")
 

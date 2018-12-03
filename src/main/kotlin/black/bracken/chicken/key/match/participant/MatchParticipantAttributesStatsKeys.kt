@@ -21,7 +21,7 @@ object MatchParticipantAttributesStatsKeys {
 
     val DAMAGE_DEALT = SimpleModelKey<MPAS, Double>("damageDealt")
 
-    val DEATH_TYPE = SimpleModelKey<MPAS, DeathType>("deathType") { jsonObject -> DeathType.valueOf(jsonObject as String) }
+    val DEATH_TYPE = SimpleModelKey<MPAS, DeathType>("deathType") { DeathType.valueOf(it as String) }
 
     val HEADSHOT_KILLS = SimpleModelKey<MPAS, Int>("headshotKills")
 

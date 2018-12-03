@@ -18,16 +18,16 @@ object MatchIncludedKeys {
         model.jsonObject.values
                 .asSequence()
                 .mapNotNull { it as? JsonObject }
-                .filter { jsonObject -> jsonObject.getOrDefault("type", "") == typeName }
-                .map { jsonObject -> ModelDealer(instantiate(jsonObject)) }
+                .filter { it.getOrDefault("type", "") == typeName }
+                .map { ModelDealer(instantiate(it)) }
                 .toList()
     })
 
-    val ROSTERS: IncludedChildModelKey<MatchRoster> = ChildModelKey("roster") { jsonObject -> MatchRoster(jsonObject) }
+    val ROSTERS: IncludedChildModelKey<MatchRoster> = ChildModelKey("roster") { MatchRoster(it) }
 
-    val PARTICIPANTS: IncludedChildModelKey<MatchParticipant> = ChildModelKey("participant") { jsonObject -> MatchParticipant(jsonObject) }
+    val PARTICIPANTS: IncludedChildModelKey<MatchParticipant> = ChildModelKey("participant") { MatchParticipant(it) }
 
-    val ASSETS: IncludedChildModelKey<MatchAsset> = ChildModelKey("asset") { jsonObject -> MatchAsset(jsonObject) }
+    val ASSETS: IncludedChildModelKey<MatchAsset> = ChildModelKey("asset") { MatchAsset(it) }
 
 }
 

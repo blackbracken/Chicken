@@ -15,11 +15,11 @@ object TournamentKeys {
 
     val ID = SimpleModelKey<Tournament, String>("id")
 
-    val RELATIONSHIPS = DownModelKey<Tournament, TournamentRelationships>("relationships") { jsonObject ->
-        TournamentRelationships(jsonObject["data"] as JsonObject)
+    val RELATIONSHIPS = DownModelKey<Tournament, TournamentRelationships>("relationships") {
+        TournamentRelationships(it["data"] as JsonObject)
     }
 
-    val INCLUDED = DownModelKey<Tournament, TournamentIncluded>("included") { jsonObject -> TournamentIncluded(jsonObject) }
+    val INCLUDED = DownModelKey<Tournament, TournamentIncluded>("included") { TournamentIncluded(it) }
 
 }
 

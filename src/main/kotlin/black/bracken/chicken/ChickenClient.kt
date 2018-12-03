@@ -31,7 +31,7 @@ class ChickenClient(private val apiKey: String) {
                 .addHeader("Accept", "application/vnd.api+json")
                 .addHeader("Accept-Encoding", "gzip")
                 .build()
-        return Prepared({ client.newCall(request) }, { jsonObject -> chickenRequest.transformJson(jsonObject) })
+        return Prepared({ client.newCall(request) }, { chickenRequest.transformJson(it) })
     }
 
 }

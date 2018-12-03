@@ -10,6 +10,4 @@ import com.beust.klaxon.JsonObject
 class DownModelKey<in M : JsonModel, R : JsonModel>(
         private val id: String,
         private val instantiate: (JsonObject) -> R
-) : ModelKey<M, ModelDealer<R>>(
-        { model -> ModelDealer(instantiate(model.jsonObject[id] as JsonObject)) }
-)
+) : ModelKey<M, ModelDealer<R>>({ ModelDealer(instantiate(it.jsonObject[id] as JsonObject)) })

@@ -14,7 +14,7 @@ object PlayerAttributesKeys {
 
     val NAME = SimpleModelKey<PlayerAttributes, String>("name")
 
-    val SHARD_ID = SimpleModelKey<PlayerAttributes, RegionShard>("shardId") { any -> RegionShard.valueOf(any as String) }
+    val SHARD_ID = SimpleModelKey<PlayerAttributes, RegionShard>("shardId") { RegionShard.valueOf(it as String) }
 
     val PATCH_VERSION = SimpleModelKey<PlayerAttributes, String>("patchVersion")
 

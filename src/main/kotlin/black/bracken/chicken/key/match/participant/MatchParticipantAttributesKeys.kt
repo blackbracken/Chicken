@@ -2,9 +2,9 @@ package black.bracken.chicken.key.match.participant
 
 import black.bracken.chicken.key.DownModelKey
 import black.bracken.chicken.key.SimpleModelKey
-import black.bracken.chicken.model.ModelDealer
 import black.bracken.chicken.model.MatchParticipantAttributes
 import black.bracken.chicken.model.MatchParticipantAttributesStats
+import black.bracken.chicken.model.ModelDealer
 import black.bracken.chicken.model.enumerations.region.RegionShard
 
 /**
@@ -14,11 +14,9 @@ object MatchParticipantAttributesKeys {
 
     val ACTOR = SimpleModelKey<MatchParticipantAttributes, String>("actor")
 
-    val SHARD_ID = SimpleModelKey<MatchParticipantAttributes, RegionShard>("shardId") { any -> RegionShard.valueOf(any as String) }
+    val SHARD_ID = SimpleModelKey<MatchParticipantAttributes, RegionShard>("shardId") { RegionShard.valueOf(it as String) }
 
-    val STATS_NEW = DownModelKey<MatchParticipantAttributes, MatchParticipantAttributesStats>("stats") { jsonObject ->
-        MatchParticipantAttributesStats(jsonObject)
-    }
+    val STATS_NEW = DownModelKey<MatchParticipantAttributes, MatchParticipantAttributesStats>("stats") { MatchParticipantAttributesStats(it) }
 
 }
 

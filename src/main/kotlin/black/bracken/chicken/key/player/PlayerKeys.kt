@@ -16,9 +16,9 @@ object PlayerKeys {
 
     val ID = SimpleModelKey<Player, String>("id")
 
-    val ATTRIBUTES = DownModelKey<Player, PlayerAttributes>("attributes") { jsonObject -> PlayerAttributes(jsonObject) }
+    val ATTRIBUTES = DownModelKey<Player, PlayerAttributes>("attributes") { PlayerAttributes(it) }
 
-    val RELATIONSHIPS = DownModelKey<Player, PlayerRelationships>("relationships") { jsonObject -> PlayerRelationships(jsonObject) }
+    val RELATIONSHIPS = DownModelKey<Player, PlayerRelationships>("relationships") { PlayerRelationships(it) }
 
 }
 
